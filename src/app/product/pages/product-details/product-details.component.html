@@ -1,0 +1,378 @@
+<div class="cart">
+    <div class="container">
+        <div class="product">
+            <div class="main-product-area">
+                <div class="details">
+                    <div class="describe-feature">
+                        <div class="brand-info">
+                            <div class="brand-name">Dior</div>
+                        </div>
+                        <div class="title">
+                            <div class="product-title">عطر سوفاج بيرفيوم</div>
+                        </div>
+                        <div class="title">
+                            <p class="product-subtitle">افضل العطور برائحة وفواحان تدوم طويلا</p>
+                        </div>
+                        <div class="div-2">
+                            <div class="addto-wishlist">
+                                <div class="add-to-wishlist-text">أضف الى المفضلة</div>
+                                <img class="component" src="images/product-details/component-25.svg" />
+                            </div>
+                            <div class="separator"></div>
+                            <div class="stars">
+                                <div class="reviews-text">200&nbsp;&nbsp;مراجعة</div>
+                                <div class="separator-2">|</div>
+                                <div class="star">
+                                    <div class="element">4.5</div>
+                                    <img class="huge-icon-interface"
+                                        src="images/product-details/huge-icon-interface-solid-star-2.svg" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="share">
+                            <div class="social">
+                                <div class="share-options">
+                                    <div class="img-wrapper"><img class="img-2"
+                                            src="images/product-details/copy-icon.svg" /></div>
+                                    <div class="img-wrapper"><img class="share-icon"
+                                            src="images/product-details/share-icon.svg" /></div>
+                                    <div class="img-wrapper"><img class="img-2"
+                                            src="images/product-details/whatsapp-icon.svg" /></div>
+                                    <div class="img-wrapper"><img class="img-2"
+                                            src="images/product-details/facebook-icon.svg" /></div>
+                                </div>
+                            </div>
+                            <div class="share-text">مشاركة المنتج:</div>
+                        </div>
+                        <div class="share">
+                            <div class="div">
+                                <div class="div-wrapper">
+                                    <div class="text-wrapper-2">300 مل</div>
+                                </div>
+                                <div class="div-wrapper">
+                                    <div class="text-wrapper-2">200 مل</div>
+                                </div>
+                                <div class="size-small-text">
+                                    <div class="size-medium-text">100 مل</div>
+                                </div>
+                            </div>
+                            <div class="size-text">الحجم:</div>
+                        </div>
+                    </div>
+                    <div class="product-price">
+                        <div class="div-3">
+                            <div class="price">
+                                <div class="price-2">
+                                    <p class="p"><span class="span">500 </span> <span class="text-wrapper-3">ر.س</span>
+                                    </p>
+                                    <div class="tax-info">السعر شامل الضريبة</div>
+                                </div>
+                            </div>
+                            <div class="quantity-selector">
+                                <div class="quantity-input">
+                                    <div class="img-wrapper-2"><img class="subtract-icon"
+                                            src="images/product-details/subtract-icon.svg" /></div>
+                                    <div class="quantity-input-2">1</div>
+                                    <div class="img-wrapper-2"><img class="img-2"
+                                            src="images/product-details/add-icon.svg" /></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="btn-action">
+                            <div class="btn-addto-cart">
+                                <div class="add-to-cart">
+                                    <div class="title-2">
+                                        <div class="purchase-now-button">شراء الان</div>
+                                    </div>
+                                </div>
+                                <div class="title-wrapper">
+                                    <div class="title-2">
+                                        <div class="add-to-cart-button">أضف الى السلة</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-image">
+                    <app-item-slider></app-item-slider>
+                </div>
+            </div>
+            <div class="tamara-anbbyd-ta">
+                <div class="div-4">
+                    <img class="tabby-installment" src="images/product-details/tabby-installment-mini-1.png" />
+                    <div class="installment-text">
+                        <p class="div-5">
+                            <span class="text-wrapper-4">قسمها إلى 4 دفعات بمبلغ 1624.75 رس بدون فوائد.<br /></span>
+                            <span class="text-wrapper-5">اعرف المزيد</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="div-4">
+                    <img class="download" src="images/product-details/download-1.svg" />
+                    <div class="installment-wrapper">
+                        <p class="div-5">
+                            <span class="text-wrapper-4">قسمها إلى 4 دفعات بمبلغ 1624.75 رس بدون فوائد.<br /></span>
+                            <span class="text-wrapper-5">اعرف المزيد</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="product-2">
+            <div class="describe-review">
+                <div class="div-wrapper-2" [class.tab-active] = "currentTab == 3" (click)="currentTab = 3">
+                    <div class="write-review-text">شاركنا رائك</div>
+                </div>
+                <div class="div-wrapper-2" [class.tab-active] = "currentTab == 2" (click)="currentTab = 2">
+                    <div class="reviews-count-text">المراجعات(233)</div>
+                </div>
+                <div class="div-wrapper-2 product-description" [class.tab-active] = "currentTab == 1" (click)="currentTab = 1">
+                    <div class="product-description-2">وصف المنتج</div>
+                </div>
+            </div>
+            <div class="tab-content w-100">
+                 <div class="tab1" *ngIf="currentTab == 1">
+                    <p class="main-product">
+                        <span class="text-wrapper-6">الخط العطري: أروماتيك<br />عطر سوفاج (Sauvage) .<br />من بيت أزياء كريستيان
+                            ديور (Christian Dior ).<br />عطر
+                            خاص بالرجال من العائلة العطرية السرخسية.<br />عطر راقي ومنعش يناسب الرجل النبيل.<br />مستوحى من
+                            الفضاء
+                            المفتوح مع السموات الزرقاء الساخنة من الشمس .<br />او دي تواليت عصري في تصميمه.<br />تم تصميم هذا
+                            العطر على
+                            يد فرنسوا ديماتشي.<br />يحتوى على مكونات طبيعية تم إختيارها بعناية شديدة.<br />تم إطلاق العطر في
+                            سبتمبر
+                            2015.<br />نكهات منعشة من البرغموت و العنبر و الملاحظات الخشبية الدافئة.<br />عطر ديور سوفاج العطر
+                            الرائع
+                            والاكثر طلباً وشهرة من عائلة التوابل،<br />عطر جذّاب للرجل الغامض والجريء والمتهور الذي يعيش الحياة
+                            بتناقضاتها جامعاً بين الفخامة والبساطة.</span>
+                        <span class="text-wrapper-7">إظهار المزيد </span>
+                    </p>
+                 </div>
+                 <div class="tab2" *ngIf="currentTab == 2">
+                    <div class="product">
+                        <div class="product-rate">
+                          <div class="review-section">
+                            <div class="review-header">
+                              <div class="review-count">200</div>
+                              <div class="review-star-bar"><div class="review-star-filled"></div></div>
+                              <div class="star">
+                                <div class="element">5</div>
+                                <img class="huge-icon-interface" src="images/product-details/tab2/huge-icon-interface-solid-star-2.svg" />
+                              </div>
+                            </div>
+                            <div class="review-header">
+                              <div class="review-count">80</div>
+                              <div class="review-star-bar"><div class="div"></div></div>
+                              <div class="star">
+                                <div class="element">4</div>
+                                <img class="huge-icon-interface" src="images/product-details/tab2/huge-icon-interface-solid-star-2-1.svg" />
+                              </div>
+                            </div>
+                            <div class="review-header">
+                              <div class="review-count">10</div>
+                              <div class="review-star-bar"><div class="review-star-filled-2"></div></div>
+                              <div class="star">
+                                <div class="element">3</div>
+                                <img class="huge-icon-interface" src="images/product-details/tab2/huge-icon-interface-solid-star-2-2.svg" />
+                              </div>
+                            </div>
+                            <div class="review-header">
+                              <div class="review-count">8</div>
+                              <div class="review-star-bar"><div class="review-star-filled-3"></div></div>
+                              <div class="star">
+                                <div class="element">2</div>
+                                <img class="huge-icon-interface" src="images/product-details/tab2/huge-icon-interface-solid-star-2-3.svg" />
+                              </div>
+                            </div>
+                            <div class="review-header">
+                              <div class="review-count">2</div>
+                              <div class="review-star-bar"><div class="review-star-filled-4"></div></div>
+                              <div class="star">
+                                <div class="element">1</div>
+                                <img class="huge-icon-interface" src="images/product-details/tab2/huge-icon-interface-solid-star-2-4.svg" />
+                              </div>
+                            </div>
+                          </div>
+                          <div class="overall-rating">
+                            <div class="overall-rating-title">تقييم المنتج</div>
+                            <p class="overall-rating-score"><span class="span">4.9 </span> <span class="text-wrapper-2">/ 5.0</span></p>
+                            <img class="rating" src="images/product-details/tab2/rating.svg" />
+                            <div class="overall-rating-count">233 مراجعة</div>
+                          </div>
+                        </div>
+                        <div class="review">
+                          <div class="review-2">
+                            <div class="single-review">
+                              <div class="reviewer-info">
+                                <div class="review-stars">
+                                  <img class="review-star" src="images/product-details/tab2/review-star-19.svg" />
+                                  <img class="review-star" src="images/product-details/tab2/review-star-19.svg" />
+                                  <img class="review-star" src="images/product-details/tab2/review-star-19.svg" />
+                                  <img class="review-star" src="images/product-details/tab2/review-star-19.svg" />
+                                  <img class="img" src="images/product-details/tab2/review-star-19.svg" />
+                                </div>
+                                <div class="review-purchase-tag"><div class="purchase-tag-text">قام بالشراء</div></div>
+                              </div>
+                              <div class="reviewer-name">
+                                <div class="reviewer-name-wrapper"><div class="reviewer-name-2">رفيق سلطان</div></div>
+                                <div class="reviewer-avatar">
+                                  <div class="overlap-group"><div class="reviewer-initials">ر س</div></div>
+                                </div>
+                              </div>
+                            </div>
+                            <p class="review-text">
+                              &#34;عطر رائع يتميز برائحة فريدة تدوم طويلاً. يجمع بين الفخامة والجاذبية، مثالي للاستخدام اليومي والمناسبات
+                              الخاصة. ننصح به لمن يبحث عن التميز.&#34;
+                            </p>
+                          </div>
+                          <div class="review-2">
+                            <div class="single-review">
+                              <div class="reviewer-info">
+                                <div class="review-stars">
+                                  <img class="review-star" src="images/product-details/tab2/review-star-19.svg" />
+                                  <img class="review-star" src="images/product-details/tab2/review-star-19.svg" />
+                                  <img class="review-star" src="images/product-details/tab2/review-star-19.svg" />
+                                  <img class="review-star" src="images/product-details/tab2/review-star-19.svg" />
+                                  <img class="img" src="images/product-details/tab2/review-star-19.svg" />
+                                </div>
+                                <div class="review-purchase-tag"><div class="purchase-tag-text">قام بالشراء</div></div>
+                              </div>
+                              <div class="reviewer-name">
+                                <div class="reviewer-name-wrapper"><div class="reviewer-name-2">رفيق سلطان</div></div>
+                                <div class="reviewer-avatar">
+                                  <div class="overlap-group"><div class="reviewer-initials">ر س</div></div>
+                                </div>
+                              </div>
+                            </div>
+                            <p class="review-text">
+                              &#34;عطر رائع يتميز برائحة فريدة تدوم طويلاً. يجمع بين الفخامة والجاذبية، مثالي للاستخدام اليومي والمناسبات
+                              الخاصة. ننصح به لمن يبحث عن التميز.&#34;
+                            </p>
+                          </div>
+                          <div class="review-2">
+                            <div class="single-review">
+                              <div class="reviewer-info">
+                                <div class="review-stars">
+                                  <img class="review-star" src="images/product-details/tab2/review-star-19.svg" />
+                                  <img class="review-star" src="images/product-details/tab2/review-star-19.svg" />
+                                  <img class="review-star" src="images/product-details/tab2/review-star-19.svg" />
+                                  <img class="review-star" src="images/product-details/tab2/review-star-19.svg" />
+                                  <img class="img" src="images/product-details/tab2/review-star-19.svg" />
+                                </div>
+                                <div class="review-purchase-tag"><div class="purchase-tag-text">قام بالشراء</div></div>
+                              </div>
+                              <div class="reviewer-name">
+                                <div class="reviewer-name-wrapper"><div class="reviewer-name-2">رفيق سلطان</div></div>
+                                <div class="reviewer-avatar">
+                                  <div class="overlap-group"><div class="reviewer-initials">ر س</div></div>
+                                </div>
+                              </div>
+                            </div>
+                            <p class="review-text">
+                              &#34;عطر رائع يتميز برائحة فريدة تدوم طويلاً. يجمع بين الفخامة والجاذبية، مثالي للاستخدام اليومي والمناسبات
+                              الخاصة. ننصح به لمن يبحث عن التميز.&#34;
+                            </p>
+                          </div>
+                          <div class="review-2">
+                            <div class="single-review">
+                              <div class="reviewer-info">
+                                <div class="review-stars">
+                                  <img class="review-star" src="images/product-details/tab2/review-star-19.svg" />
+                                  <img class="review-star" src="images/product-details/tab2/review-star-19.svg" />
+                                  <img class="review-star" src="images/product-details/tab2/review-star-19.svg" />
+                                  <img class="review-star" src="images/product-details/tab2/review-star-19.svg" />
+                                  <img class="img" src="images/product-details/tab2/review-star-19.svg" />
+                                </div>
+                                <div class="review-purchase-tag"><div class="purchase-tag-text">قام بالشراء</div></div>
+                              </div>
+                              <div class="reviewer-name">
+                                <div class="reviewer-name-wrapper"><div class="reviewer-name-2">رفيق سلطان</div></div>
+                                <div class="reviewer-avatar">
+                                  <div class="overlap-group"><div class="reviewer-initials">ر س</div></div>
+                                </div>
+                              </div>
+                            </div>
+                            <p class="review-text">
+                              &#34;عطر رائع يتميز برائحة فريدة تدوم طويلاً. يجمع بين الفخامة والجاذبية، مثالي للاستخدام اليومي والمناسبات
+                              الخاصة. ننصح به لمن يبحث عن التميز.&#34;
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                 </div>
+                 <div class="tab3" *ngIf="currentTab == 3">
+                    <div class="tab3-container">
+                        <div class="make-a-review">
+                          <div class="frame">
+                            <div class="div">شكرا لتسوقك معنا</div>
+                            <p class="p">يسعدنا سماع رائك حول المنتج</p>
+                          </div>
+                          <div class="input-forms">
+                            <div class="text-wrapper-2">تقييم المنتج:</div>
+                            <div class="frame-2">
+                              <img class="star" src="images/product-details/tab3/star-3.svg" />
+                              <img class="star" src="images/product-details/tab3/star-3.svg" />
+                              <img class="star" src="images/product-details/tab3/star-3.svg" />
+                              <img class="star" src="images/product-details/tab3/star-3.svg" />
+                              <img class="star" src="images/product-details/tab3/star-4.svg" />
+                            </div>
+                            <div class="text-wrapper-3">شاركنا رائك</div>
+                            <div class="textarea-input-field">
+                              <div class="textarea-input-field-2">
+                                <div class="input-with-label">
+                                  <div class="input"><div class="text">مراجعتك حول المنتج</div></div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="add-to-cart">
+                            <div class="title"><div class="text-wrapper-4">ارسال المراجعة</div></div>
+                          </div>
+                        </div>
+                      </div>
+                 </div>
+            </div>
+        </div>
+        <div class="product-related">
+            <div class="div-3">
+                <div class="indicator">
+                    <img class="related-products" src="images/product-details/related-products-scroll-left.svg" />
+                    <img class="related-products" src="images/product-details/related-products-scroll-right.svg" />
+                </div>
+                <p class="related-products-2">يفضل عملائنا ايضاً مع هذا المنتج</p>
+            </div>
+            <div class="div-2">
+                <div class="product-card-2" *ngFor="let item of [1,2,3,4,5]">
+                    <div class="new-label">
+                        <div class="notifaction"><img class="wishlist-icon-2"
+                                src="images/product-details/wishlist-icon-3.svg" /></div>
+                    </div>
+                    <div class="savage-cologne-macy"></div>
+                    <div class="star-ratings">
+                        <div class="star-wrapper">
+                            <div class="star">
+                                <img class="img" src="images/product-details/huge-icon-interface-solid-star-2-4.svg" />
+                                <div class="element-2">4.5(55)</div>
+                            </div>
+                        </div>
+                        <div class="product-card-brand">Dior</div>
+                    </div>
+                    <div class="describe">
+                        <div class="product-card-title">عطر سوفاج بيرفيوم</div>
+                        <div class="cart-with-price">
+                            <div class="product-card-price">
+                                <div class="product-card-price-2">500 ر.س</div>
+                            </div>
+                            <div class="product-add-to-cart-wrapper">
+                                <img class="product-add-to-cart-2"
+                                    src="images/product-details/product-add-to-cart-icon-3.svg" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="primary-image-10"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

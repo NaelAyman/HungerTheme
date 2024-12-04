@@ -1,0 +1,110 @@
+@import "../src/assets/variables.scss";
+
+body {
+    direction: rtl;
+    text-align: start;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    overflow-y: auto;
+}
+ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+
+// Radio Button
+
+/* The label-container */
+.label-container {
+    position: relative;
+    padding: 8px 0;
+    padding-inline-start: 35px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    color: $headTitle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    &:not(:last-of-type) {
+        margin-bottom: 12px;
+    }
+    .checkmark {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        height: 24px;
+        width: 24px;
+        background-color: $white;
+        border-radius: 50%;
+        border: 1px solid $radioButtonBorder;
+        transform: translateY(-50%);
+        &:after {
+            content: "";
+            position: absolute;
+            top: 4px;
+            left: 1px;
+            right: 0;
+            margin: auto;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: $primaryColor;
+            display: none;
+        }
+    }
+    input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        &:checked {
+            ~ .checkmark {
+                border: 1px solid $primaryColor;
+                &:after {
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+// Buttons
+.btn {
+    max-width: 100%;
+    height: 48px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 700;
+    border: 0;
+    &.btn-primary {
+        background-color: $primaryColor;
+        color: $white;
+    }
+    &.btn-secondary {
+        background-color: $secondaryColor;
+        color: $headTitle;
+    }
+}
+
+// Modal
+.modal-dialog {
+    box-shadow: 0 0 32px #00000029;
+    .modal-header {
+        .close {
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            background-color: transparent;
+        }
+    }
+}
+
+// Css for second language (en)
+html:lang(en) {
+}

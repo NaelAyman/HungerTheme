@@ -1,0 +1,52 @@
+
+.custom-carousel-container {
+    width: 100%;
+    overflow: hidden;
+    direction: ltr;
+    margin-bottom: 2rem;
+  }
+  
+  .carousel-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .carousel-slide {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    justify-content: center;
+  }
+  
+  .carousel-slide-item {
+    flex-shrink: 0;
+    width: calc(100% / 3); /* Show 3 items at a time */
+  }
+  
+  .carousel-image {
+    width: 100%;
+  }
+  
+  .carousel-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #ccc;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .dot.active {
+    background-color: #333;
+  }
+  

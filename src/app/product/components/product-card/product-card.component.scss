@@ -1,0 +1,12 @@
+.product-box{
+    margin-inline: 10px;
+    @media screen and (min-width: 992px){
+        width: calc(20% - 23px);
+    }
+    @media screen and (min-width: 350px){
+        display: inline-block;
+    }
+}
+.product-cart{
+    cursor: pointer;
+}

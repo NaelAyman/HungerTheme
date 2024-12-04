@@ -1,0 +1,245 @@
+<!-- Main Desktop Header -->
+<header>
+    <div class="header">
+        <div class="container">
+            <div class="header-content d-flex align-items-center justify-content-between">
+                <div class="start-content d-flex align-items-center justify-content-between">
+                    <div class="login-part">
+                        <div class="n-icon" (click)="openSideNav()">
+                            <img src="assets/images/menu-bar.svg" alt="">
+                        </div>
+                    </div>
+                    <a routerLink="" class="logo">
+                        <img src="assets/images/logo.png" alt="">
+                    </a>
+                    <div class="search" [ngClass]="{'open-searchbar': searchBar}">
+                        <div class="form-group m-0">
+                            <input type="text" class="form-control"
+                                placeholder="بحث عن مشويات، دجاج  ، حلويات ، مشروبات ............">
+                            <div class="search-icon">
+                                <img src="assets/images/search-icon.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="login-part d-flex align-items-center">
+                    <div class="favourites n-icon">
+                        <img src="assets/images/heart.svg" alt="">
+                    </div>
+                    <div class="search n-icon" (click)="openSearchBar()">
+                        <img src="assets/images/search.svg" alt="">
+                    </div>
+                    <div class="cart d-flex align-items-center">
+                        <div class="cart-icon n-icon">
+                            <div class="icon">
+                                <img src="assets/images/cart-icon.svg" alt="">
+                                <div class="count">3</div>
+                            </div>
+                        </div>
+                        <div class="total-cost">80 ر.س</div>
+                    </div>
+                    <div class="profile">
+                        <div class="dropdown-login d-flex align-items-center">
+                            <div class="profile-icon n-icon">
+                                <img src="assets/images/profile-icon.svg" alt="">
+                            </div>
+                            <div class="profile-txt">
+                                <div class="welcome-msg">
+                                    مرحبا بك
+                                </div>
+                                <div class="login-title">
+                                    تسجيل دخول
+                                    <img src="assets/images/arrow.svg" alt="">
+                                </div>
+                            </div>
+                            <ul class="dropdown-content">
+                                <li class="login-btn">
+                                    <a href="">
+                                        تسجيل الدخول
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        حسابي
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        طلباتي
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        قائمة العناوين
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        المحفظة
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        تسجيل خروج
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="header-links" [ngClass]="{'open-sidenav': sideNav}">
+        <div class="container">
+            <div class="header-content d-flex align-items-center justify-content-between">
+                <div class="menu-mobile-icons d-flex align-items-center justify-content-between w-100">
+                    <div class="n-icon" (click)="closeSideNav()">
+                        <img src="assets/images/menu-bar.svg" alt="">
+                    </div>
+                    <div class="n-icon" (click)="closeSideNav()">
+                        <img src="assets/images/modal-close-icon.svg" alt="">
+                    </div>
+                </div>
+                <div class="logo">
+                    <img src="assets/images/logo.png" alt="">
+                </div>
+                <ul class="nav-links d-flex align-items-center">
+                    <li>
+                        <a href="" class="active">
+                            الرئيسية
+                            <img src="assets/images/menu-arrow.svg" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            العروض
+                            <img src="assets/images/menu-arrow.svg" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            تواصل معنا
+                            <img src="assets/images/menu-arrow.svg" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            من نحن
+                            <img src="assets/images/menu-arrow.svg" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            سياسة وشروط الخصوصية
+                            <img src="assets/images/menu-arrow.svg" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            سياسة الاستبدال والاسترجاع 
+                            <img src="assets/images/menu-arrow.svg" alt="">
+                        </a>
+                    </li>
+                </ul>
+                <div class="app-info d-flex align-items-center">
+                    <div class="location" data-bs-toggle="modal" data-bs-target="#locationDetected">
+                        <img src="assets/images/location-icon.svg" alt="">
+                        العنوان
+                        <img src="assets/images/menu-arrow.svg" alt="">
+                    </div>
+                    <div class="lang">
+                        <div class="lang-dropdown">
+                            <div class="current-lang">
+                                <img src="assets/images/ar.svg" alt="">
+                                العربية
+                                <i class="fas fa-chevron-down"></i>
+                                <img src="assets/images/menu-arrow.svg" alt="">
+                            </div>
+                            <div class="dropdown-content">
+                                <label class="label-container d-block">
+                                    <input type="radio" checked="checked" name="radio">
+                                    <span class="checkmark"></span>
+
+                                    <img src="assets/images/ar.svg" alt="">
+                                    العربية
+                                </label>
+                                <label class="label-container d-block">
+                                    <input type="radio" name="radio">
+                                    <span class="checkmark"></span>
+
+                                    <img src="assets/images/en.svg" alt="">
+                                    الانجليزية
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Mobile Header Responsive -->
+<!-- <header class="mobile-header">
+    <div class="container">
+        .header-content
+    </div>
+</header> -->
+
+<!-- Location Detected Modal -->
+<div class="modal fade location-detected" id="locationDetected" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header border-0">
+                <button type="button" class="close p-0 border-0" data-bs-dismiss="modal">
+                    <img src="assets/images/modal-close-icon.svg" alt="">
+                </button>
+            </div>
+            <div class="modal-body text-center">
+                <div class="img mb-4">
+                    <img src="assets/images/location-detected.svg" alt="">
+                </div>
+                <div class="location-txt mb-3">
+                    تحديد الموقع الحالي
+                    <span class="d-block mt-3">
+                        لتحصل على خدمة توصيل سريعة ودقيقة، نحتاج إذنك للوصول إلى موقعك .
+                    </span>
+                </div>
+                <div class="site-btns">
+                    <button type="button" class="btn btn-primary w-100 mb-3" data-bs-toggle="modal"
+                        data-bs-target="#marketLocation">سماح</button>
+                    <button type="button" class="btn btn-secondary w-100" data-bs-dismiss="modal">رفض</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- Market Location Modal -->
+<div class="modal fade market-location" id="marketLocation" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header border-0">
+                <button type="button" class="close p-0 border-0" data-bs-dismiss="modal">
+                    <img src="assets/images/modal-close-icon.svg" alt="">
+                </button>
+            </div>
+            <div class="modal-body text-center">
+                <div class="img mb-4 d-flex align-items-center justify-content-center">
+                    <img src="assets/images/location-icon.svg" alt="">
+                    <p class="m-0">موقع المتجر</p>
+                </div>
+                <div class="map">
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

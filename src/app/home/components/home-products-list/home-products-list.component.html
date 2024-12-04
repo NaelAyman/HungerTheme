@@ -1,0 +1,13 @@
+<div class="products-list mb-5" *ngFor="let item of [1,2,3,4,5]">
+    <div class="container">
+        <div class="heading-title d-flex align-items-center justify-content-between mb-4">
+            <h2 class="mb-0">جوالات</h2>
+            <div class="show-all text-center">
+                <a class="d-flex align-items-center justify-content-center" routerLink="/product/category/1">{{'showAll' | translate}}</a>
+            </div>
+        </div>
+        <div class="products-list-container">
+           <app-product-card *ngFor="let product of [1,2,3,4,5]" />
+        </div>
+    </div>
+</div>

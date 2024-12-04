@@ -1,0 +1,309 @@
+<div id="checkout-step-confirm-order">
+<div id="checkout-confirm-order-load">
+    <h3 class="main-title d-flex align-items-center mb-4">
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
+            viewBox="0 0 50.665 50.487">
+            <g transform="translate(-1697.662 -474.266)">
+                <path
+                    d="M-63.319,469.473l-2.755-1.75a4,4,0,0,0-3.861-.235l-2.947,1.4a4,4,0,0,1-5.527-2.4l-.986-3.111a3.994,3.994,0,0,0-2.806-2.661l-3.159-.82a4,4,0,0,1-2.691-5.392l1.245-3.017a4,4,0,0,0-.439-3.843l-1.893-2.659a4,4,0,0,1,1.4-5.86l2.893-1.511a4,4,0,0,0,2.133-3.226l.259-3.253a4,4,0,0,1,4.843-3.587l3.187.7a4,4,0,0,0,3.709-1.1l2.289-2.326a4,4,0,0,1,6.015.366l1.991,2.586a3.994,3.994,0,0,0,3.547,1.541l3.249-.31a4,4,0,0,1,4.373,4.147l-.138,3.261a4,4,0,0,0,1.727,3.461l2.688,1.85a4,4,0,0,1,.684,5.988l-2.2,2.409a4,4,0,0,0-.9,3.761l.87,3.146a4,4,0,0,1-3.325,5.026l-3.235.431a3.994,3.994,0,0,0-3.109,2.3l-1.355,2.969A4,4,0,0,1-63.319,469.473Z"
+                    transform="translate(1789.559 52.635)" fill="none" stroke="#090326"
+                    stroke-width="4"></path>
+                <path d="M9638.4,501.11l7.437,7.257c-.061.382,16.673-15.5,16.673-15.5"
+                    transform="translate(-7927.458 -1.122)" fill="none" stroke="#090326"
+                    stroke-width="4"></path>
+            </g>
+        </svg>
+        <span class="ml-2">{{ 'confirmOrder' | translate }}</span>
+    </h3>
+    <div class="checkout-data">
+        <div class="section order-summary">
+            <div class="order-summary-content">
+
+
+                <input hidden="" type="text" id="OrderReviewData_CustomerEmail"
+                    name="OrderReviewData.CustomerEmail" value="Saadelshahat88@gmail.com">
+                <input hidden="" type="text" id="OrderReviewData_CustomerPhone"
+                    name="OrderReviewData.CustomerPhone" value="+966547822455">
+
+                <div class="d-block d-md-flex order-confirm-address">
+                    <div class="payment-address">
+                        <h4 class="title text-center mb-0">
+                            <span class="text">{{ 'billingAddress' | translate }}</span>
+                        </h4>
+                        <div class="content">
+                            <p class="mb-2 "><strong>{{ 'name' | translate }}:</strong> Saad Elshahat</p>
+                            <p class="mb-2 "><strong>{{ 'email' | translate }} :</strong>
+                                Saadelshahat88&#64;gmail.com</p>
+                            <p class="mb-2 "><strong> {{ 'phoneNumber' | translate }}:</strong> 547822455</p>
+
+                            <p class="mb-2"><strong>{{ 'address' | translate }}:</strong> Saudi Arabia, Madinah,
+                                Al Madinah Al Munawwarah, 3780 Asad Bin Haritha Street</p>
+
+                            <p class="mb-0 bold">{{ 'payment' | translate }}: MADA-مدى</p>
+                        </div>
+                    </div>
+
+                    <div class="shipping-address mt-3 mt-md-0">
+                        <h4 class="title text-center mb-0">
+                            <span class="text">{{ 'shippingAddress' | translate }}</span>
+                        </h4>
+
+                        <div class="content">
+                            <p class="mb-2 "><strong>{{ 'name' | translate }}:</strong> Saad Elshahat</p>
+                            <p class="mb-2 "><strong>{{ 'email' | translate }} :</strong>
+                                Saadelshahat88&#64;gmail.com</p>
+                            <p class="mb-2 "><strong> {{ 'phoneNumber' | translate }}:</strong> 547822455</p>
+                            <p class="mb-2"><strong>{{ 'address' | translate }}:</strong> Saudi Arabia, Madinah,
+                                Al Madinah Al Munawwarah, 3780 Asad Bin Haritha Street</p>
+                            <p class="mb-0 bold">{{ 'shipping' | translate }}: Aramex</p>
+                        </div>
+                    </div>
+                </div>
+                <script>
+                    $(document).ready(function () {
+                        if ($('.content p').hasClass('editable')) {
+                            $('.edit-option').removeClass('d-none');
+                        }
+
+                        $('.edit-option').on('click', function (event) {
+                            event.stopPropagation(); // Stop the event from propagating to parent elements
+                            var $parent = $(this).closest('p');
+
+                            // Replace <span> with <input> in the current <p>
+                            var $p = $parent.find('.editable-paragraph');
+                            if ($p.length) {
+                                var text = $p.text();
+                                var $input = $('<input>', {
+                                    type: 'text',
+                                    value: text,
+                                    class: 'editable-input',
+                                    style: 'width:250px',
+                                });
+                                $p.replaceWith($input);
+                                $input.focus();
+
+                                // Handle input blur or enter key to save changes
+                                $input.on('blur keypress', function (e) {
+                                    if (e.type === 'blur' || e.which === 13) {
+                                        var newValue = $input.val();
+                                        var $newSpan = $('<span>', {
+                                            text: newValue,
+                                            class: 'editable-paragraph'
+                                        });
+                                        $input.replaceWith($newSpan);
+                                        $('#OrderReviewData_CustomerEmail').val(newValue);  // Save the value to the hidden input
+                                    }
+                                });
+                            }
+                        });
+
+                        $('.edit-option').on('click', function (event) {
+                            event.stopPropagation(); // Stop the event from propagating to parent elements
+                            var $parent = $(this).closest('p');
+
+                            // Replace <span> with <input> in the current <p>
+                            var $p = $parent.find('.editable-span');
+                            if ($p.length) {
+                                var text = $p.text();
+                                var $input = $('<input>', {
+                                    type: 'text',
+                                    value: text,
+                                    class: 'editable-input',
+                                    style: 'width:250px',
+
+                                });
+                                $p.replaceWith($input);
+                                $input.focus();
+
+                                // Handle input blur or enter key to save changes
+                                $input.on('blur keypress', function (e) {
+                                    if (e.type === 'blur' || e.which === 13) {
+                                        var newValue = $input.val();
+                                        var $newSpan = $('<span>', {
+                                            text: newValue,
+                                            class: 'editable-span'
+                                        });
+                                        $input.replaceWith($newSpan);
+                                        $('#OrderReviewData_CustomerPhone').val(newValue);  // Save the value to the hidden input
+                                    }
+                                });
+                            }
+                        });
+                    });
+                </script>
+                <form method="post" enctype="multipart/form-data" id="shopping-cart-form"
+                    action="/cart">
+                    <div class="items mt-3">
+                        <div
+                            class="titles mt-3 d-flex align-items-center justify-content-between">
+                            <h4 class="item-img mb-0"></h4>
+                            <h4 class="item-details mb-0">منتج</h4>
+                            <h4 class="item-price mb-0">{{ 'price' | translate }}</h4>
+                            <h4 class="item-quantity mb-0">الكمية</h4>
+                            <h4 class="item-total mb-0">{{ 'total' | translate }}</h4>
+                        </div>
+                        <div class="item-box d-flex align-items-center justify-content-between"
+                            data-price="800.00">
+                            <div class="item-details d-flex align-items-center">
+                                <div class="item-img">
+                                    <a href="/tshrt-alhlal">
+                                        <img alt="صورة تشرت الهلال"
+                                            src="https://bird-eye-staging.s3.me-south-1.amazonaws.com/0003420_0.webp?X-Amz-Expires=518400&amp;X-Amz-Security-Token=IQoJb3JpZ2luX2VjEBgaCm1lLXNvdXRoLTEiRjBEAiB4RWCIC%2BJ%2F%2BAM5vdXMcKF2vifRUT9GOgCb83wsPlXYZAIgC5JpW%2Fl8wuNBjoyBS2hDmty8644qrDMJs6KJsBD3wnYqgQQIpP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgw4NjgwODI5Mjk1NDYiDLSF05S5aWPM0ftW2yrVAwo6TaxJG5uN2GJBJoQc%2Fop56beIfN2H3yZMTIt9rGD6%2Bq2uC0VAZl5HGNN7adY7sarwpRWY2qCickhWElR3ZGHXYHO3MCsDjT3mTm4MwwBUTf5tT4O9BJDnfhDdGdIF5j4WzX8QitJgOAsV5jZAZYF6mXVyV5Kd4EbX3%2Bs8leOZgaT2STd%2BlDshoWUyIrI44w7no1slCcARAcEKJFnvNnkDNDyJl%2FSlgTtRkJ7jU099KONOs9T1Li4oSeFZEMZTTAXm7FOALgqPXItbTXTCpsV0dayG06YiXjLdjbW8Fsg9OOdCtJcUBKS16jCGQ3FU7%2F9scM5akjeBI5uyGGHY2YGtsbR5hg9IRf%2BuZOeBmoaG3f7ZCKbrmxPIUtrYccJZzrL71FT6akS53zokt7aap0kuRnuQDgDTnxy7%2BW5%2Bm3DAW2dyqGd8N9hPEI7kLncZezr5W%2FoPUG%2BeljRBL%2BL4ZTLRWTI%2FB4xb%2BPgr6w1U1%2Fq8X0jPTVqRnN7FlinR9WmWSrDmM%2FeGns2811O7sPZGLvc4Px3gtxhS47o1IKsSiAtdoCEDSMAdG8ohwm1z2SUgNV%2FxlBw7H3UdpVDxUYgm8AW%2FltpiIXlq%2BVb6CJlft6ae1Fi8MO0w88r0twY6pgG9k1wtg9joupUL2oVYYwzDg2OMp0YVAZxq0rxQpsbtKH56XijEn4uNgXLePik7PDzTJDkJCKNDQxnP%2FFI0lqzw80Jqnnniq7tcSiB2Fe5AdSp4eGCxz0VxQ86VT3N6mv%2BfF2R21y219XwNWzg6Dall%2F%2Bvgma%2Bu2K7KD%2FvuvUHwyaZmFsojlApH7xZ2ztbq2Xne7zerBHWgwqjElkuiE7evaQgc4joO&amp;X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=ASIA4UHOGJ6FA4Q4IMTF%2F20241002%2Fme-south-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20241002T130925Z&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=e5790c0ad68317da0669c01d4d2c1c51fd25d3a2230236b1facad9f24abb947d"
+                                            title="تفاصيل تشرت الهلال">
+                                    </a>
+                                </div>
+                                <div>
+                                    <div class="d-flex flex-column">
+                                        <h4 class="title mb-1">
+                                            <a style="color:black" href="/tshrt-alhlal"
+                                                class="product-name">تشرت الهلال</a>
+                                        </h4>
+                                        <p class="size mb-1">Color: أحمر </p>
+                                        <p class="size mb-1">
+                                            <strong>{{ 'barcode' | translate }}:</strong>
+                                            <span class="sku-number">43371</span>
+                                        </p>
+                                    </div>
+                                    <div
+                                        class="mt-3 d-md-none d-flex justify-content-between align-items-center qty-total">
+                                        <div class="item-total">800.00 {{ 'SAR' | translate }}</div>
+                                        <div
+                                            class="item-quantity d-flex justify-content-center pr-2  ">
+                                            <span>1</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item-price d-md-block d-none">
+                                <p class="mb-0">800.00 {{ 'SAR' | translate }}</p>
+                            </div>
+                            <div
+                                class="item-quantity d-md-flex d-none justify-content-center">
+                                <span>1</span></div>
+                            <div class="item-total d-md-block d-none">
+                                <p class="mb-0">800.00 {{ 'SAR' | translate }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="items mt-3">
+                        <div
+                            class="titles mt-3 d-flex align-items-center justify-content-between">
+                            <h4 class="item-img mb-0"></h4>
+                            <h4 class="item-details mb-0">{{ 'product' | translate }}</h4>
+                            <h4 class="item-price mb-0">{{ 'price' | translate }}</h4>
+                            <h4 class="item-quantity mb-0">{{ 'quantity' | translate }}</h4>
+                            <h4 class="item-total mb-0">{{ 'total' | translate }}</h4>
+                        </div>
+                        <div class="item-box d-flex align-items-center justify-content-between"
+                            data-price="900.00">
+                            <div class="item-details d-flex align-items-center">
+                                <div class="item-img">
+                                    <a href="/tshrt">
+                                        <img alt="صورة تشرت"
+                                            src="https://bird-eye-staging.s3.me-south-1.amazonaws.com/0003366_0.jpeg?X-Amz-Expires=518400&amp;X-Amz-Security-Token=IQoJb3JpZ2luX2VjEBgaCm1lLXNvdXRoLTEiRjBEAiB4RWCIC%2BJ%2F%2BAM5vdXMcKF2vifRUT9GOgCb83wsPlXYZAIgC5JpW%2Fl8wuNBjoyBS2hDmty8644qrDMJs6KJsBD3wnYqgQQIpP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgw4NjgwODI5Mjk1NDYiDLSF05S5aWPM0ftW2yrVAwo6TaxJG5uN2GJBJoQc%2Fop56beIfN2H3yZMTIt9rGD6%2Bq2uC0VAZl5HGNN7adY7sarwpRWY2qCickhWElR3ZGHXYHO3MCsDjT3mTm4MwwBUTf5tT4O9BJDnfhDdGdIF5j4WzX8QitJgOAsV5jZAZYF6mXVyV5Kd4EbX3%2Bs8leOZgaT2STd%2BlDshoWUyIrI44w7no1slCcARAcEKJFnvNnkDNDyJl%2FSlgTtRkJ7jU099KONOs9T1Li4oSeFZEMZTTAXm7FOALgqPXItbTXTCpsV0dayG06YiXjLdjbW8Fsg9OOdCtJcUBKS16jCGQ3FU7%2F9scM5akjeBI5uyGGHY2YGtsbR5hg9IRf%2BuZOeBmoaG3f7ZCKbrmxPIUtrYccJZzrL71FT6akS53zokt7aap0kuRnuQDgDTnxy7%2BW5%2Bm3DAW2dyqGd8N9hPEI7kLncZezr5W%2FoPUG%2BeljRBL%2BL4ZTLRWTI%2FB4xb%2BPgr6w1U1%2Fq8X0jPTVqRnN7FlinR9WmWSrDmM%2FeGns2811O7sPZGLvc4Px3gtxhS47o1IKsSiAtdoCEDSMAdG8ohwm1z2SUgNV%2FxlBw7H3UdpVDxUYgm8AW%2FltpiIXlq%2BVb6CJlft6ae1Fi8MO0w88r0twY6pgG9k1wtg9joupUL2oVYYwzDg2OMp0YVAZxq0rxQpsbtKH56XijEn4uNgXLePik7PDzTJDkJCKNDQxnP%2FFI0lqzw80Jqnnniq7tcSiB2Fe5AdSp4eGCxz0VxQ86VT3N6mv%2BfF2R21y219XwNWzg6Dall%2F%2Bvgma%2Bu2K7KD%2FvuvUHwyaZmFsojlApH7xZ2ztbq2Xne7zerBHWgwqjElkuiE7evaQgc4joO&amp;X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=ASIA4UHOGJ6FA4Q4IMTF%2F20241002%2Fme-south-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20241002T130925Z&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=2935625e674a518e845197b7d22aef1f5dafc82721f455d01d63178133207639"
+                                            title="تفاصيل تشرت">
+                                    </a>
+                                </div>
+                                <div>
+                                    <div class="d-flex flex-column">
+                                        <h4 class="title mb-1">
+                                            <a style="color:black" href="/tshrt"
+                                                class="product-name">تشرت</a>
+                                        </h4>
+                                        <p class="size mb-1">
+                                            <strong>{{ 'barcode' | translate }}:</strong>
+                                            <span class="sku-number">4334</span>
+                                        </p>
+                                    </div>
+                                    <div
+                                        class="mt-3 d-md-none d-flex justify-content-between align-items-center qty-total">
+                                        <div class="item-total">900.00 {{ 'SAR' | translate }}</div>
+                                        <div
+                                            class="item-quantity d-flex justify-content-center pr-2  ">
+                                            <span>1</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item-price d-md-block d-none">
+                                <p class="mb-0">900.00 {{ 'SAR' | translate }}</p>
+                                <p style="color:red" class="discount">{{ 'installationPrice' | translate }}: 50.00
+                                    {{ 'SAR' | translate }}</p>
+                            </div>
+                            <div
+                                class="item-quantity d-md-flex d-none justify-content-center">
+                                <span>1</span></div>
+                            <div class="item-total d-md-block d-none">
+                                <p class="mb-0">950.00 {{ 'SAR' | translate }}</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="cart-options">
+                        <div class="selected-checkout-attributes">
+
+                        </div>
+                    </div>
+
+                    <div class="cart-footer">
+
+                        <div class="totals">
+
+
+                            <div
+                                class="total-calcs mt-3 d-flex flex-column align-items-center">
+                                <p
+                                    class="mb-2 d-flex align-items-center justify-content-between">
+                                    <span class="title">{{ 'price' | translate }}
+                                        <span><small>({{ 'excludingTax' | translate }})</small>:</span>
+                                    </span>
+                                    <span class="value">1528.26 {{ 'SAR' | translate }}</span>
+                                </p>
+                                <p
+                                    class="mb-2 d-flex align-items-center justify-content-between">
+                                    <span class="title">{{ 'tax' | translate }}:</span>
+                                    <span class="value">221.74 {{ 'SAR' | translate }}</span>
+                                </p>
+                                <p
+                                    class="mb-2 d-flex align-items-center justify-content-between">
+
+                                    <span class="title">
+                                        الشحن (Aramex):
+                                    </span>
+
+                                    <span class="value"
+                                        style="display:inline-block;white-space: nowrap;">25.00
+                                        {{ 'SAR' | translate }}</span>
+                                </p>
+                                <p
+                                    class="mb-2 d-flex align-items-center justify-content-between">
+                                    <span class="title"> {{ 'additionalFeeFor' | translate }} <br>MADA-مدى:</span>
+                                    <span class="value">8.48 {{ 'SAR' | translate }}</span>
+                                </p>
+
+                                <p
+                                    class="total mb-2 py-2 d-flex align-items-center justify-content-between">
+                                    <span class="title">{{ 'total' | translate }}:</span>
+                                    <span class="value"
+                                        style="display:inline-block;white-space: nowrap;">1783.48
+                                        {{ 'SAR' | translate }}</span>
+                                </p>
+
+                                <p
+                                    class="mb-0 d-flex align-items-center justify-content-between">
+                                    <span class="title">{{ 'youWillEarn' | translate }}:</span>
+                                    <span class="value">175 {{ 'point' | translate }}</span>
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <input name="__RequestVerificationToken" type="hidden"
+                        value="CfDJ8GG-0JxmiLNPrVSgjZi-JEYia47DFCKUFTnCBN5RRIxWIsgO5abXzWIPjO9oMJB19TElW4h0ilo6P6rrEaXJjuGMkktxgMrj25wIQJw_Naw4XzJ6Iugb9AJE6tgtgWYn1qljimNbXb-uGOwidwxkots">
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+</div>

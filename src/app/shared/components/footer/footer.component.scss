@@ -1,0 +1,196 @@
+@import '../../../../assets/variables.scss';
+
+footer {
+    .footer {
+        padding: 30px 0;
+        background-color: $footerBg;
+        .links-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: $headTitle;
+            margin-bottom: 16px;
+        }
+        .links {
+            li {
+                &:not(:last-child) {
+                    margin-bottom: 16px;
+                }
+                a {
+                    position: relative;
+                    display: inline-block;
+                    font-size: 14px;
+                    color: $headTitle;
+                    padding-inline-start: 24px;
+                    padding-bottom: 5px;
+                    transition: all 0.3s ease-in-out;
+                    img {
+                        position: absolute;
+                        right: 0;
+                        top: 50%;
+                        transform: translateY(-50%);
+                    }
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        right: 24px;
+                        width: 0;
+                        height: 1px;
+                        bottom: 0;
+                        background-color: $primaryColor;
+                        transition: all 0.3s ease-in-out;
+                    }
+                    &:hover {
+                        color: $primaryColor;
+                        &::before {
+                            width: calc(100% - 24px);
+                        }
+                    }
+                }
+            }
+        }
+        .subscripe {
+            .social {
+                margin-bottom: 20px;
+                li {
+                    a {
+                        display: inline-block;
+                        width: 36px;
+                        height: 36px;
+                        border-radius: 50%;
+                        background-color: $white;
+                        text-align: center;
+                        line-height: 33px;
+                        transition: all 0.3s ease-in-out;
+                        &:hover {
+                            svg {
+                                path {
+                                    fill: $white;
+                                }
+                            }
+                            &.twitter {
+                                background-color: $twitter;
+                            }
+                            &.twitterX {
+                                background-color: $twitterX;
+                            }
+                            &.facebook {
+                                background-color: $facebook;
+                            }
+                            &.insta {
+                                background-color: $insta;
+                            }
+                            &.snap {
+                                background-color: $snap;
+                            }
+                        }
+                    }
+                    &:not(:last-child) {
+                        margin-inline-end: 8px;
+                    }
+                }
+            }
+            .payment-methods {
+                li {
+                    a {
+                        display: inline-block;
+                        border-radius: 2px;
+                    }
+                    &:not(:last-child) {
+                        margin-inline-end: 8px;
+                    }
+                }
+            }
+        }
+    }
+    .foot {
+        padding: 10px;
+        background-color: $white;
+        border-top: 1px solid $footerBorder;
+        .foot-content {
+            img {
+                margin-inline-end: 8px;
+            }
+            .reserve-txt {
+                font-size: 12px;
+                text-align: center;
+                color: $headTitle;
+                margin-inline-start: 15px;
+                span {
+                    color: #ABABAB;
+                    margin-top: 5px;
+                }
+            }
+            .powered {
+                font-size: 14px;
+                font-weight: 500;
+                color: $subTitle;
+            }
+        }
+    }
+}
+.fixed-footer {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 80px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    bottom: 0;
+    background-color: $white;
+    box-shadow: 0 0 16px #0000001A;
+    z-index: 9;
+    .fixed-links {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        text-align: center;
+        li {
+            flex-grow: 1;
+            a {
+                position: relative;
+                display: inline-block;
+                padding: 18px 0;
+                color: $fixedFooter;
+                font-size: 14px;
+                font-weight: 500;
+                .icon {
+                    margin-bottom: 8px;
+                }
+                &.active {
+                    color: $primaryColor;
+                    .icon {
+                        path {
+                            fill: $primaryColor;
+                        }
+                    }
+                }
+                .market-count {
+                    position: absolute;
+                    width: 16px;
+                    height: 16px;
+                    border-radius: 50%;
+                    background-color: $primaryColor;
+                    color: $white;
+                    line-height: 15px;
+                    text-align: center;
+                    font-size: 12px;
+                    font-weight: 500;
+                    top: 10px;
+                    right: 23px;
+                }
+            }
+        }
+    }
+}
+
+// Media
+@media(max-width: 991px) {
+    footer {
+        display: none;
+    }
+    .fixed-footer {
+        display: block;
+    }
+}
+

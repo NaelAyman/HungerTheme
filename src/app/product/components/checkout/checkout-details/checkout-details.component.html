@@ -1,0 +1,1343 @@
+<!-- Shipping Address -->
+<div id="shippingAddress" *ngIf="!showAddAddress">
+    <div id="opc-shipping" class="address-details flex-column justify-content-between">
+        <div id="checkout-step-shipping">
+            <form id="co-shipping-form" action="" method="post" novalidate="novalidate">
+                <div id="checkout-shipping-load">
+                    <div class="mb-4" id="shippingAddressList">
+
+                        <div id="HeaderOfShippingAddress" style="display:block">
+                            <h3 class="main-title d-flex align-items-center mb-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
+                                    viewBox="0 0 46.023 46.023">
+                                    <path d="M0,0H46.023V46.023H0Z" fill="none"></path>
+                                    <path
+                                        d="M20.259,38.243l9.492-9.492a13.424,13.424,0,1,0-18.985,0Zm0,5.423-12.2-12.2a17.259,17.259,0,1,1,24.408,0Zm0-20.572a3.835,3.835,0,1,0-3.835-3.835A3.835,3.835,0,0,0,20.259,23.094Zm0,3.835a7.671,7.671,0,1,1,7.671-7.671A7.671,7.671,0,0,1,20.259,26.929Z"
+                                        transform="translate(2.753 1.835)"></path>
+                                </svg>
+                                <span class="ml-2">{{ 'shippingAddress' | translate }}</span>
+                            </h3>
+                        </div>
+                        <div id="HeaderOfShippingAddressLocation" class="flex-column" style="display:none">
+                            <div class="d-flex justify-content-between align-items-center" style="width: 400px;">
+                                <h3 class="main-title d-flex align-items-center mb-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
+                                        viewBox="0 0 46.023 46.023">
+                                        <path d="M0,0H46.023V46.023H0Z" fill="none"></path>
+                                        <path
+                                            d="M20.259,38.243l9.492-9.492a13.424,13.424,0,1,0-18.985,0Zm0,5.423-12.2-12.2a17.259,17.259,0,1,1,24.408,0Zm0-20.572a3.835,3.835,0,1,0-3.835-3.835A3.835,3.835,0,0,0,20.259,23.094Zm0,3.835a7.671,7.671,0,1,1,7.671-7.671A7.671,7.671,0,0,1,20.259,26.929Z"
+                                            transform="translate(2.753 1.835)"></path>
+                                    </svg>
+                                    <span class="ml-2">موقعى</span>
+                                </h3>
+                                <button
+                                    style="background:none;width: 170px;margin-inline: 10px;height: 37px;border:1px solid var(--primary-color);border-radius:5px;color:var(--primary-color);">
+                                    + اضف موقعك
+                                </button>
+                            </div>
+
+                            <p style="margin-inline: 37px; margin-top: 10px; display:none"
+                                id="PickupFromBranchShippingAddressP">
+                                {{ 'pleaseSpecifyLocationAccurately' | translate }}
+                            </p>
+                            <p style="margin-inline: 37px;margin-top: 10px; display:none"
+                                id="InstantShippingShippingAddressP">
+                                {{ 'pleaseSpecifyLocationAccurately' | translate }}
+                            </p>
+
+                        </div>
+
+                        <div asp-validation-summary="ModelOnly" style="color:red"></div>
+
+
+                        <div style="color:gray;font-weight:bold;" hidden="">
+                            <p>
+                                <input asp-for="BillOnSameAddress" hidden="">
+                                <label asp-for="BillOnSameAddress">استدخدام نفس {{ 'address' | translate }} لعنوان
+                                    الدفع</label>
+                            </p>
+                        </div>
+                        <div class="address-select shipping-addresses d-flex" id="shipping-addresses-form">
+                            <div class="address-box" id="812">
+                                <input class="d-none" type="radio" id="shippingAddress_812" name="shipping_address_id"
+                                    value="812">
+                                <label for="shippingAddress_812" class="w-100">
+                                    <div class="check">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                            viewBox="0 0 27 27">
+                                            <g transform="translate(-0.28 0.212)">
+                                                <g transform="translate(0.28 -0.212)" fill="#fff" stroke="#090326"
+                                                    stroke-width="2">
+                                                    <circle cx="13.5" cy="13.5" r="13.5" stroke="none"></circle>
+                                                    <circle cx="13.5" cy="13.5" r="12" fill="none"></circle>
+                                                </g>
+                                                <path
+                                                    d="M5.053,15.453.218,10.618a.744.744,0,0,1,0-1.052L1.27,8.514a.744.744,0,0,1,1.052,0l3.257,3.257L12.555,4.8a.744.744,0,0,1,1.052,0l1.052,1.052a.744.744,0,0,1,0,1.052L6.1,15.453A.744.744,0,0,1,5.053,15.453Z"
+                                                    transform="translate(5.961 3.276)" fill="#090326"></path>
+                                            </g>
+                                        </svg>
+                                    </div>
+                                    <div class="content">
+                                        <p class="mb-1"><span class="title">{{ 'country' | translate }}: </span><span class="value">Saudi
+                                                Arabia</span></p>
+                                        <p class="mb-1"><span class="title">{{ 'city' | translate }}:
+                                            </span><span class="value">Riyadh</span></p>
+                                        <p class="mb-1"><span class="title">{{ 'district' | translate }}: </span><span
+                                                class="value">الرياض</span></p>
+                                        <p class="mb-1"><span class="title">{{ 'address' | translate }}:
+                                            </span><span class="value">3689 شارع بجاد بن قيس,
+                                                المربع, الرياض, 12613</span></p>
+                                        <p class="mb-1"><span class="title">رقم الهاتف:
+                                            </span><span class="value">+966122345433</span></p>
+                                    </div>
+                                    <div class="actions d-flex flex-column justify-content-between">
+                                        <a class="collapse-actions" href="#address-actions_812" data-toggle="collapse"
+                                            aria-expanded="false">...</a>
+                                        <ul class="list-unstyled mb-0 collapse" id="address-actions_812">
+                                            <li><a class="edit" href="javascript:editAddress(812)">{{ 'edit' | translate }}</a>
+                                            </li>
+                                            <li><a class="delete" href="javascript:deleteAddress(812)">{{ 'delete' | translate }}</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="address-box" id="1687">
+                                <input class="d-none" type="radio" id="shippingAddress_1687" name="shipping_address_id"
+                                    value="1687" checked="">
+                                <label for="shippingAddress_1687" class="w-100">
+                                    <div class="check">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                            viewBox="0 0 27 27">
+                                            <g transform="translate(-0.28 0.212)">
+                                                <g transform="translate(0.28 -0.212)" fill="#fff" stroke="#090326"
+                                                    stroke-width="2">
+                                                    <circle cx="13.5" cy="13.5" r="13.5" stroke="none"></circle>
+                                                    <circle cx="13.5" cy="13.5" r="12" fill="none"></circle>
+                                                </g>
+                                                <path
+                                                    d="M5.053,15.453.218,10.618a.744.744,0,0,1,0-1.052L1.27,8.514a.744.744,0,0,1,1.052,0l3.257,3.257L12.555,4.8a.744.744,0,0,1,1.052,0l1.052,1.052a.744.744,0,0,1,0,1.052L6.1,15.453A.744.744,0,0,1,5.053,15.453Z"
+                                                    transform="translate(5.961 3.276)" fill="#090326"></path>
+                                            </g>
+                                        </svg>
+                                    </div>
+                                    <div class="content">
+                                        <p class="mb-1"><span class="title">{{ 'country' | translate }}: </span><span class="value">Saudi
+                                                Arabia</span></p>
+                                        <p class="mb-1"><span class="title">{{ 'city' | translate }}:
+                                            </span><span class="value">Madinah</span></p>
+                                        <p class="mb-1"><span class="title">الحي: </span><span class="value">Al Madinah
+                                                Al Munawwarah</span>
+                                        </p>
+                                        <p class="mb-1"><span class="title">{{ 'address' | translate }}:
+                                            </span><span class="value">3780 Asad Bin Haritha
+                                                Street</span></p>
+                                        <p class="mb-1"><span class="title">{{ 'phoneNumber' | translate }} :
+                                            </span><span class="value">+966547822455</span></p>
+                                    </div>
+                                    <div class="actions d-flex flex-column justify-content-between">
+                                        <a class="collapse-actions" href="#address-actions_1687" data-toggle="collapse"
+                                            aria-expanded="false">...</a>
+                                        <ul class="list-unstyled mb-0 collapse" id="address-actions_1687">
+                                            <li><a class="edit" href="javascript:editAddress(1687)">{{ 'edit' | translate }}</a>
+                                            </li>
+                                            <li><a class="delete" href="javascript:deleteAddress(1687)">{{ 'delete' | translate }}</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="address-btns  justify-content-center align-items-center d-flex">
+                            <button type="button" class="btn add justify-content-center align-items-center"
+                                id="BtnAddShippingAddress" style="display: flex;" (click)="showAddAddress = true"><span
+                                    class="icon mr-2">+</span><span class="title">اضف عنوان جديد</span></button>
+                        </div>
+                    </div>
+
+                    <div class="section new-shipping-address" id="shippingNewAddress-form" style="display: none;">
+                        <div class="address-add">
+                            <h3 class="main-title d-flex align-items-center mb-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 47 47">
+                                    <path d="M0,0H47V47H0Z" fill="none"></path>
+                                    <path
+                                        d="M20.625,39.012l9.694-9.694a13.708,13.708,0,1,0-19.388,0Zm0,5.538L8.162,32.088a17.625,17.625,0,1,1,24.926,0ZM18.667,17.667V11.792h3.917v5.875h5.875v3.917H22.583v5.875H18.667V21.583H12.792V17.667Z"
+                                        transform="translate(2.875 1.917)"></path>
+                                </svg>
+                                <span class="main ml-2">{{ 'shippingAddress' | translate }}</span>
+                                <span class="sub" id="ShippingNewAddressTitle"> / إضافة عنوان
+                                    جديد</span>
+                            </h3>
+
+                            <div class="enter-address">
+
+                                <div id="newshippingaddressform">
+                                    <!-- CSS and JS files for Search Box -->
+                                    <style>
+                                        .error-msg {
+                                            color: red;
+                                        }
+                                    </style>
+
+
+                                    <!-- CSS and JS files for Search Box -->
+
+
+
+
+
+
+
+                                    <input class="address-id" type="hidden" data-val="true"
+                                        data-val-required="The Id field is required." id="ShippingNewAddress_Id"
+                                        name="ShippingNewAddress.Id" value="0">
+                                    <input class="address-id" type="hidden" data-val="true"
+                                        data-val-required="حدد الموقع على الخريطة" id="ShippingNewAddress_latlng"
+                                        name="ShippingNewAddress.latlng" value="">
+                                    <input hidden="" type="checkbox" data-val="true"
+                                        data-val-required="The SelectedCityValid field is required."
+                                        id="ShippingNewAddress_SelectedCityValid"
+                                        name="ShippingNewAddress.SelectedCityValid" value="true">
+                                    <input hidden="" type="text" id="ShippingNewAddress_AddressEn"
+                                        name="ShippingNewAddress.AddressEn" value="">
+                                    <input class="address-id" name="selectedCountryId" id="selectedCountryId"
+                                        type="hidden" value="196">
+                                    <input name="countrycode" id="countrycode" type="hidden">
+
+                                    <div class="edit-address">
+                                        <div class="row form-group mb-0">
+                                            <div class="col-md-6 mb-3">
+                                                <div class="input-group mb-0 align-items-center">
+                                                    <input class="form-control" required="" placeholder="الإسم الأول"
+                                                        type="text" data-val="true"
+                                                        data-val-regex="يجب أن تكون أحرف فقط"
+                                                        data-val-regex-pattern="^([a-zA-Z\u0600-\u06FF]+[_ ]*[a-zA-Z\u0600-\u06FF]*)+$"
+                                                        data-val-required="الإسم الأول مطلوب"
+                                                        id="ShippingNewAddress_FirstName"
+                                                        name="ShippingNewAddress.FirstName" value="Ziyach">
+                                                    <span class="error-msg">*</span>
+                                                </div>
+                                                <span class="error-msg field-validation-valid"
+                                                    data-valmsg-for="ShippingNewAddress.FirstName"
+                                                    data-valmsg-replace="true"></span>
+                                            </div>
+                                            <div class="col-md-6 mb-3">
+                                                <div class="input-group mb-0 align-items-center">
+                                                    <input type="text" class="form-control" required=""
+                                                        placeholder="اسم العائلة" data-val="true"
+                                                        data-val-regex="يجب أن تكون أحرف فقط"
+                                                        data-val-regex-pattern="^([a-zA-Z\u0600-\u06FF]+[_ ]*[a-zA-Z\u0600-\u06FF]*)+$"
+                                                        data-val-required="إسم العائلة مطلوب"
+                                                        id="ShippingNewAddress_LastName"
+                                                        name="ShippingNewAddress.LastName" value="Essam">
+                                                    <span class="error-msg">*</span>
+                                                </div>
+                                                <span class="error-msg field-validation-valid"
+                                                    data-valmsg-for="ShippingNewAddress.LastName"
+                                                    data-valmsg-replace="true"></span>
+                                            </div>
+                                        </div>
+                                        <div class="row form-group mb-0">
+                                            <div class="col-md-6 mb-3">
+                                                <div class="input-group mb-0 align-items-center account-phone-number">
+                                                    <input type="text" class="form-control" required=""
+                                                        placeholder="رقم الهاتف" minlength="9" maxlength="9"
+                                                        pattern="[0-9]+" data-val="true"
+                                                        data-val-length="الحد المطلوب لطول للحقل هو 9 حرف"
+                                                        data-val-length-max="9" data-val-length-min="9"
+                                                        data-val-regex="يجب أن يتكون رقم الهاتف من أرقام فقط"
+                                                        data-val-regex-pattern="[0-9]+$"
+                                                        data-val-required="رقم الهاتف مطلوب"
+                                                        id="ShippingNewAddress_PhoneNumber"
+                                                        name="ShippingNewAddress.PhoneNumber" value="">
+                                                    <span class="country-code">+966</span>
+                                                    <span class="error-msg">*</span>
+                                                </div>
+                                                <span class="error-msg field-validation-valid"
+                                                    data-valmsg-for="ShippingNewAddress.PhoneNumber"
+                                                    data-valmsg-replace="true"></span>
+                                            </div>
+                                            <div class="col-md-6 mb-3">
+                                                <div class="input-group mb-0 align-items-center">
+                                                    <input type="email" class="form-control" required=""
+                                                        placeholder="البريد الإلكتروني" data-val="true"
+                                                        data-val-email="بريد خاطىء"
+                                                        data-val-required="البريد الإلكتروني مطلوب"
+                                                        id="ShippingNewAddress_Email" name="ShippingNewAddress.Email"
+                                                        value="ziadessam1019@gmail.com">
+                                                    <span class="error-msg">*</span>
+                                                </div>
+                                                <span class="error-msg field-validation-valid"
+                                                    data-valmsg-for="ShippingNewAddress.Email"
+                                                    data-valmsg-replace="true"></span>
+                                            </div>
+                                        </div>
+                                        <div class="row form-group mb-0">
+                                            <div class="col-md-6 mb-3">
+                                                <div class="input-group mb-0 align-items-center">
+                                                    <select class="form-control" data-trigger="country-select"
+                                                        data-val="true" data-val-required="الدولة مطلوبة"
+                                                        id="ShippingNewAddress_CountryId"
+                                                        name="ShippingNewAddress.CountryId">
+                                                        <option selected="selected" value="196">
+                                                            Saudi Arabia</option>
+                                                    </select>
+                                                    <span class="error-msg">*</span>
+                                                </div>
+                                                <span class="error-msg field-validation-valid"
+                                                    data-valmsg-for="ShippingNewAddress.CountryId"
+                                                    data-valmsg-replace="true"></span>
+                                            </div>
+
+                                            <div class="col-md-6 mb-3">
+                                                <div class="input-group mb-0 align-items-center">
+                                                    <select data-trigger="state-select" class="form-control"
+                                                        data-val="true"
+                                                        data-val-required="The ArmxCityId field is required."
+                                                        id="ShippingNewAddress_ArmxCityId"
+                                                        name="ShippingNewAddress.ArmxCityId">
+                                                        <option value="0">اختار المحافظة
+                                                        </option>
+                                                        <option value="1">Abha</option>
+                                                    </select>
+                                                    <span id="states-loading-progress" style="display: none;"
+                                                        class="please-wait">انتظر...</span>
+                                                    <span class="error-msg">*</span>
+                                                </div>
+                                                <span class="error-msg field-validation-valid"
+                                                    data-valmsg-for="ShippingNewAddress.ArmxCityId"
+                                                    data-valmsg-replace="true"></span>
+                                                <div id="validationShippingMapMsg" class="error-msg" hidden="">{{ 'address' | translate }}
+                                                    المحدد
+                                                    على الخريطة ليس في {{ 'city' | translate }} المحددة</div>
+                                            </div>
+                                        </div>
+                                        <div class="row form-group mb-0">
+                                            <div class="col-md-6 mb-3">
+                                                <div class="input-group mb-0 align-items-center">
+                                                    <input type="text" class="form-control" required=""
+                                                        placeholder="{{ 'city' | translate }}" data-val="true"
+                                                        data-val-required="المدينة مطلوبة" id="ShippingNewAddress_City"
+                                                        name="ShippingNewAddress.City" value="">
+                                                    <span class="error-msg">*</span>
+                                                </div>
+                                                <span class="error-msg field-validation-valid"
+                                                    data-valmsg-for="ShippingNewAddress.City"
+                                                    data-valmsg-replace="true"></span>
+                                            </div>
+                                            <div class="col-md-6 mb-3">
+                                                <div class="input-group mb-0 align-items-center">
+                                                    <input type="text" class="form-control" required=""
+                                                        placeholder="الرقم البريدي" data-val="true"
+                                                        data-val-length="الحد المطلوب لطول للحقل هو 5 حرف"
+                                                        data-val-length-max="5" data-val-length-min="5"
+                                                        data-val-regex="يجب أن يتكون الرقم البريدي من أرقام فقط"
+                                                        data-val-regex-pattern="[0-9]+$"
+                                                        data-val-required="الرقم البريدي مطلوب"
+                                                        id="ShippingNewAddress_ZipPostalCode"
+                                                        name="ShippingNewAddress.ZipPostalCode" value="">
+                                                    <span class="error-msg">*</span>
+                                                </div>
+                                                <span class="error-msg field-validation-valid"
+                                                    data-valmsg-for="ShippingNewAddress.ZipPostalCode"
+                                                    data-valmsg-replace="true"></span>
+                                            </div>
+                                        </div>
+                                        <div class="row form-group mb-0">
+                                            <div class="col-md-6 mb-3">
+                                                <div class="input-group mb-0 align-items-center">
+                                                    <input type="text" class="form-control" required=""
+                                                        placeholder="{{ 'address' | translate }} 1" data-val="true"
+                                                        data-val-required="العنوان مطلوب"
+                                                        id="ShippingNewAddress_Address1"
+                                                        name="ShippingNewAddress.Address1" value="">
+                                                    <span class="error-msg">*</span>
+                                                </div>
+                                                <span class="error-msg field-validation-valid"
+                                                    data-valmsg-for="ShippingNewAddress.Address1"
+                                                    data-valmsg-replace="true"></span>
+                                            </div>
+                                            <div class="col-md-6 mb-3">
+                                                <div class="input-group mb-0 align-items-center">
+                                                    <input type="text" class="form-control" placeholder="{{ 'address' | translate }} 2"
+                                                        id="ShippingNewAddress_Address2"
+                                                        name="ShippingNewAddress.Address2" value="">
+                                                </div>
+                                                <span class="error-msg field-validation-valid"
+                                                    data-valmsg-for="ShippingNewAddress.Address2"
+                                                    data-valmsg-replace="true"></span>
+                                            </div>
+                                        </div>
+
+                                        <h4 class="mt-4">الموقع</h4>
+                                        <p class="map-desc">يرجى تحديد الموقع بدقة ليتسهل الوصول
+                                            اليك</p>
+
+                                        <div class="inputs" style="display:flex;">
+                                            <div id="ShippingAddressMap"
+                                                style="height: 500px; width: 100%; position: relative;"
+                                                class="leaflet-container leaflet-touch leaflet-fade-anim leaflet-grab leaflet-touch-drag leaflet-touch-zoom"
+                                                tabindex="0">
+                                                <div class="leaflet-pane leaflet-map-pane"
+                                                    style="transform: translate3d(0px, 0px, 0px);">
+                                                    <div class="leaflet-pane leaflet-tile-pane">
+                                                        <div class="leaflet-layer " style="z-index: 1; opacity: 1;">
+                                                            <div class="leaflet-tile-container leaflet-zoom-animated"
+                                                                style="z-index: 18; transform: translate3d(0px, 0px, 0px) scale(1);">
+                                                                <img alt="" role="presentation"
+                                                                    src="https://b.tile.openstreetmap.org/6/40/27.png"
+                                                                    class="leaflet-tile leaflet-tile-loaded"
+                                                                    style="width: 256px; height: 256px; transform: translate3d(-70px, -118px, 0px); opacity: 1;">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="leaflet-pane leaflet-shadow-pane">
+                                                    </div>
+                                                    <div class="leaflet-pane leaflet-overlay-pane">
+                                                    </div>
+                                                    <div class="leaflet-pane leaflet-marker-pane">
+                                                    </div>
+                                                    <div class="leaflet-pane leaflet-tooltip-pane">
+                                                    </div>
+                                                    <div class="leaflet-pane leaflet-popup-pane">
+                                                    </div>
+                                                    <div class="leaflet-proxy leaflet-zoom-animated"
+                                                        style="transform: translate3d(10310.2px, 7030.1px, 0px) scale(32);">
+                                                    </div>
+                                                </div>
+                                                <div class="leaflet-control-container">
+                                                    <div class="leaflet-top leaflet-left">
+                                                        <div class="leaflet-control-zoom leaflet-bar leaflet-control">
+                                                            <a class="leaflet-control-zoom-in" href="#" title="Zoom in"
+                                                                role="button" aria-label="Zoom in">+</a><a
+                                                                class="leaflet-control-zoom-out" href="#"
+                                                                title="Zoom out" role="button"
+                                                                aria-label="Zoom out">−</a>
+                                                        </div>
+                                                        <div class="geocoder-control leaflet-control">
+                                                            <input class="geocoder-control-input leaflet-bar"
+                                                                title="Location Search">
+                                                            <div class="geocoder-control-suggestions leaflet-bar">
+                                                                <div class=""></div>
+                                                                <div class=""></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="leaflet-top leaflet-right">
+                                                    </div>
+                                                    <div class="leaflet-bottom leaflet-left">
+                                                    </div>
+                                                    <div class="leaflet-bottom leaflet-right">
+                                                        <div
+                                                            class="leaflet-control-attribution leaflet-control esri-truncated-attribution:hover esri-truncated-attribution">
+                                                            <a href="http://leafletjs.com"
+                                                                title="A JS library for interactive maps">Leaflet</a>
+                                                            | Powered by <a href="https://www.esri.com">Esri</a>
+                                                            | © <a href="#">Birdeye</a>
+                                                            contributors
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <ul class="nav-btns list-inline d-flex justify-content-center align-items-center mb-0">
+                                    <li><button type="button" class="shippingNewAddressBtns btn next-step"
+                                            style="display: none;">{{ 'save' | translate }}</button></li>
+                                    <li><button type="button" class="shippingNewAddressBtns btn mx-2"
+                                            style="background-color: rgb(112, 112, 112); display: none;">{{ 'back' | translate }}</button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+                <input name="__RequestVerificationToken" type="hidden"
+                    value="CfDJ8GG-0JxmiLNPrVSgjZi-JEZiWd3chUHwJJHm4RiOcWHC3N13rm90POZQDENBPvw7mOYPpAzttIa3g19upINl2QpW50-vy1ViF2B2iWdOiGSP-1BCYjUfy6oMMcNHmXM1v5tX39K2h7yWT-wN4BEGVRc"><input
+                    name="ShippingNewAddress.SelectedCityValid" type="hidden" value="false">
+            </form>
+
+        </div>
+    </div>
+</div>
+
+<!-- Shipping Method  -->
+<div id="opc-shipping_method" class="d-flex flex-column justify-content-between" *ngIf="!showAddAddress">
+    <div id="checkout-step-shipping-method">
+        <h3 class="main-title d-flex align-items-center mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 48.157 48.157">
+                <path d="M0,0H48.157V48.157H0Z" fill="none"></path>
+                <path
+                    d="M6.013,30.092V6.013H2V2H8.02a2.007,2.007,0,0,1,2.007,2.007V28.085H34.983L39,12.033H14.039V8.02h27.53a2.007,2.007,0,0,1,1.946,2.494L38.5,30.579A2.007,2.007,0,0,1,36.553,32.1H8.02A2.007,2.007,0,0,1,6.013,30.092Zm4.013,14.046a4.013,4.013,0,1,1,4.013-4.013A4.013,4.013,0,0,1,10.026,44.137Zm24.078,0a4.013,4.013,0,1,1,4.013-4.013A4.013,4.013,0,0,1,34.1,44.137Z"
+                    transform="translate(2.013 2.013)"></path>
+            </svg>
+            <span class="ml-2">طريقة الشحن</span>
+            <span class="please-wait ml-2" id="shipping-please-wait" style="color: green; display: none;">جاري
+                التحميل...</span>
+        </h3>
+        <form id="co-shipping-method-form" action="" method="post">
+            <div id="checkout-shipping-method-load">
+                <div class="shipping-methods d-flex">
+                    <input type="number" id="PreSelectShippingProviderId" hidden="">
+                    <div class="method-box">
+
+                        <input id="shippingoption_0" class="d-none instantShippingInputForCheckout" type="radio"
+                            name="shippingoption" value="5_0_0">
+                        <label for="shippingoption_0" class="text-center w-100" style="height: 140px;">
+                            <div class="check">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 27 27">
+                                    <g transform="translate(-0.28 0.212)">
+                                        <g transform="translate(0.28 -0.212)" fill="#fff" stroke="#090326"
+                                            stroke-width="2">
+                                            <circle cx="13.5" cy="13.5" r="13.5" stroke="none">
+                                            </circle>
+                                            <circle cx="13.5" cy="13.5" r="12" fill="none">
+                                            </circle>
+                                        </g>
+                                        <path
+                                            d="M5.053,15.453.218,10.618a.744.744,0,0,1,0-1.052L1.27,8.514a.744.744,0,0,1,1.052,0l3.257,3.257L12.555,4.8a.744.744,0,0,1,1.052,0l1.052,1.052a.744.744,0,0,1,0,1.052L6.1,15.453A.744.744,0,0,1,5.053,15.453Z"
+                                            transform="translate(5.961 3.276)" fill="#090326">
+                                        </path>
+                                    </g>
+                                </svg>
+                            </div>
+                            <div class="content d-flex align-items-center justify-content-center flex-column">
+                                <div class="method-img d-flex align-items-center flex-column w-100">
+                                    <img class="img-fluid" style="width: 70px;"
+                                        src="https://bird-eye-staging.s3.me-south-1.amazonaws.com/0003373_0.jpeg?X-Amz-Expires=518400&amp;X-Amz-Security-Token=IQoJb3JpZ2luX2VjEBgaCm1lLXNvdXRoLTEiRjBEAiB4RWCIC%2BJ%2F%2BAM5vdXMcKF2vifRUT9GOgCb83wsPlXYZAIgC5JpW%2Fl8wuNBjoyBS2hDmty8644qrDMJs6KJsBD3wnYqgQQIpP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgw4NjgwODI5Mjk1NDYiDLSF05S5aWPM0ftW2yrVAwo6TaxJG5uN2GJBJoQc%2Fop56beIfN2H3yZMTIt9rGD6%2Bq2uC0VAZl5HGNN7adY7sarwpRWY2qCickhWElR3ZGHXYHO3MCsDjT3mTm4MwwBUTf5tT4O9BJDnfhDdGdIF5j4WzX8QitJgOAsV5jZAZYF6mXVyV5Kd4EbX3%2Bs8leOZgaT2STd%2BlDshoWUyIrI44w7no1slCcARAcEKJFnvNnkDNDyJl%2FSlgTtRkJ7jU099KONOs9T1Li4oSeFZEMZTTAXm7FOALgqPXItbTXTCpsV0dayG06YiXjLdjbW8Fsg9OOdCtJcUBKS16jCGQ3FU7%2F9scM5akjeBI5uyGGHY2YGtsbR5hg9IRf%2BuZOeBmoaG3f7ZCKbrmxPIUtrYccJZzrL71FT6akS53zokt7aap0kuRnuQDgDTnxy7%2BW5%2Bm3DAW2dyqGd8N9hPEI7kLncZezr5W%2FoPUG%2BeljRBL%2BL4ZTLRWTI%2FB4xb%2BPgr6w1U1%2Fq8X0jPTVqRnN7FlinR9WmWSrDmM%2FeGns2811O7sPZGLvc4Px3gtxhS47o1IKsSiAtdoCEDSMAdG8ohwm1z2SUgNV%2FxlBw7H3UdpVDxUYgm8AW%2FltpiIXlq%2BVb6CJlft6ae1Fi8MO0w88r0twY6pgG9k1wtg9joupUL2oVYYwzDg2OMp0YVAZxq0rxQpsbtKH56XijEn4uNgXLePik7PDzTJDkJCKNDQxnP%2FFI0lqzw80Jqnnniq7tcSiB2Fe5AdSp4eGCxz0VxQ86VT3N6mv%2BfF2R21y219XwNWzg6Dall%2F%2Bvgma%2Bu2K7KD%2FvuvUHwyaZmFsojlApH7xZ2ztbq2Xne7zerBHWgwqjElkuiE7evaQgc4joO&amp;X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=ASIA4UHOGJ6FA4Q4IMTF%2F20241002%2Fme-south-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20241002T124308Z&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=28925545422757eed71bd723d213ca485f67e4a86dc714765d6f317d8b388a77"
+                                        alt="توصيل فورى">
+
+                                    <p class="mb-1" style="font-weight: bold;">توصيل فورى</p>
+                                    <p class="mb-0" style="font-size: 14px;"></p>
+                                </div>
+                                <div class="method-details w-100">
+                                    <div class="d-flex align-items-center">
+                                        <div class="icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="14.172" height="14.172"
+                                                viewBox="0 0 14.172 14.172">
+                                                <path id="usd-circle_1_" data-name="usd-circle (1)"
+                                                    d="M7.086,0a7.086,7.086,0,1,0,7.086,7.086A7.094,7.094,0,0,0,7.086,0Zm0,12.991a5.9,5.9,0,1,1,5.9-5.9A5.912,5.912,0,0,1,7.086,12.991ZM9.448,8.267a1.774,1.774,0,0,1-1.771,1.771v.59a.59.59,0,1,1-1.181,0v-.59H6.337A1.778,1.778,0,0,1,4.8,9.153a.59.59,0,0,1,1.022-.592.592.592,0,0,0,.512.3H7.676a.591.591,0,0,0,.59-.59.454.454,0,0,0-.38-.449l-1.8-.3A1.63,1.63,0,0,1,4.723,5.9,1.774,1.774,0,0,1,6.495,4.133v-.59a.59.59,0,1,1,1.181,0v.59h.158a1.778,1.778,0,0,1,1.534.886.59.59,0,1,1-1.022.591.593.593,0,0,0-.512-.3H6.5a.591.591,0,0,0-.59.59.454.454,0,0,0,.38.449l1.8.3A1.63,1.63,0,0,1,9.448,8.268Z"
+                                                    fill="#090326"></path>
+                                            </svg>
+                                        </div>
+                                        <span>5 ر.س</span>
+                                        &nbsp;
+                                        <span style="margin-left: 10px;">10 ر.س</span>
+
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <div class="icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="14.172" height="12.991"
+                                                viewBox="0 0 14.172 12.991">
+                                                <path id="shipping-fast_8_" data-name="shipping-fast (8)"
+                                                    d="M11.219,3.362H9.993A2.949,2.949,0,0,0,7.823,1.019a.59.59,0,1,0-.294,1.143A1.771,1.771,0,0,1,8.857,3.878v6.57h-6.5A1.182,1.182,0,0,1,1.181,9.267V6.9H2.657a.59.59,0,1,0,0-1.181H1.181A1.182,1.182,0,0,0,0,6.9V9.267a2.366,2.366,0,0,0,1.8,2.3,2.067,2.067,0,1,0,4.079.067H8.289a2.045,2.045,0,0,0-.022.3,2.067,2.067,0,1,0,4.1-.362,2.366,2.366,0,0,0,1.8-2.3V6.314a2.956,2.956,0,0,0-2.952-2.952Zm1.771,2.952V6.9H10.038V4.543h1.181A1.774,1.774,0,0,1,12.991,6.314Zm-8.267,5.61a.886.886,0,1,1-1.771,0,.836.836,0,0,1,.054-.3H4.671a.836.836,0,0,1,.054.3Zm5.61.886a.887.887,0,0,1-.886-.886.836.836,0,0,1,.054-.3h1.665a.836.836,0,0,1,.054.3.887.887,0,0,1-.886.886Zm1.476-2.362H10.038V8.086h2.952V9.267A1.182,1.182,0,0,1,11.81,10.448ZM0,1.59A.59.59,0,0,1,.59,1H5.405a.59.59,0,0,1,0,1.181H.59A.59.59,0,0,1,0,1.59ZM0,3.952a.59.59,0,0,1,.59-.59H4.224a.59.59,0,0,1,0,1.181H.59A.59.59,0,0,1,0,3.952Z"
+                                                    transform="translate(0 -1)" fill="#090326">
+                                                </path>
+                                            </svg>
+                                        </div>
+                                        فورى
+                                    </div>
+                                </div>
+                            </div>
+                        </label>
+                        <p class="not-available m-0 mt-1" id="OutSideCityId"
+                            style="color: #CE1F1F; font-size: 15px; display:none">منطقتك غير
+                            متاحة حالياً للتوصيل الفوري</p>
+                    </div>
+                    <input type="number" id="PreSelectShippingProviderId" hidden="">
+                    <div class="method-box">
+
+                        <input id="shippingoption_1" class="d-none" type="radio" name="shippingoption"
+                            value="3_25.0000_0" checked="checked">
+                        <label for="shippingoption_1" class="text-center w-100" style="height: 140px;">
+                            <div class="check">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 27 27">
+                                    <g transform="translate(-0.28 0.212)">
+                                        <g transform="translate(0.28 -0.212)" fill="#fff" stroke="#090326"
+                                            stroke-width="2">
+                                            <circle cx="13.5" cy="13.5" r="13.5" stroke="none">
+                                            </circle>
+                                            <circle cx="13.5" cy="13.5" r="12" fill="none">
+                                            </circle>
+                                        </g>
+                                        <path
+                                            d="M5.053,15.453.218,10.618a.744.744,0,0,1,0-1.052L1.27,8.514a.744.744,0,0,1,1.052,0l3.257,3.257L12.555,4.8a.744.744,0,0,1,1.052,0l1.052,1.052a.744.744,0,0,1,0,1.052L6.1,15.453A.744.744,0,0,1,5.053,15.453Z"
+                                            transform="translate(5.961 3.276)" fill="#090326">
+                                        </path>
+                                    </g>
+                                </svg>
+                            </div>
+                            <div class="content d-flex align-items-center justify-content-between">
+                                <div class="method-img d-flex align-items-center flex-column w-100">
+                                    <svg class="mb-2" xmlns="http://www.w3.org/2000/svg" width="123.933" height="54.903"
+                                        viewBox="0 0 123.933 54.903">
+                                        <g id="Group_6940" data-name="Group 6940" transform="translate(0 0)">
+                                            <path id="Path_31774" data-name="Path 31774"
+                                                d="M5085.276-2246.156c-.086.023-.118.022-.134.037a8.488,8.488,0,0,1-5.994,1.981q-16.17-.033-32.338-.01h-.992c-.039-.389-.073-.735-.116-1.16-.213.09-.393.152-.561.238a8.332,8.332,0,0,1-3.86.922h-4.974c-.055-.487-.1-.905-.164-1.467-2.311,1.69-4.916,1.484-7.432,1.469-.316.74-.582,1.405-.882,2.054a5.972,5.972,0,0,1-2.943,2.939,14.473,14.473,0,0,1-7.885,1.273,11.089,11.089,0,0,1-3.2-.8,10.193,10.193,0,0,1-6.457-8.473,13,13,0,0,1,.7-6.612c.047-.117.1-.231.2-.45l5.2,1.683a9.172,9.172,0,0,0-.848,3.5,8.666,8.666,0,0,0,.331,2.819,5.359,5.359,0,0,0,5.057,3.953,6.945,6.945,0,0,0,1.913-.129,4.136,4.136,0,0,0,3.585-3.88,16.71,16.71,0,0,0,.125-2c.012-3.756.006-7.512.006-11.269v-.9a27.555,27.555,0,0,1,5.273-.039v11.487a9.587,9.587,0,0,0,3.133.074,1.632,1.632,0,0,0,1.138-1.257,11.756,11.756,0,0,0,.316-2.206c.056-2.391.051-4.784.068-7.176,0-.3,0-.608,0-.968h5.3c.076.734.023,1.5.033,2.255s0,1.543,0,2.315c0,.8.014,1.6,0,2.392-.018.771-.049,1.542-.112,2.311s-.178,1.527-.275,2.34a3.233,3.233,0,0,0,.494.08c.719.009,1.44.016,2.161,0a1.731,1.731,0,0,0,1.966-1.561,13.9,13.9,0,0,0,.292-2.6c.049-2.212.033-4.425.044-6.637,0-.278,0-.557,0-.922,1.782-.06,3.49-.029,5.31-.019.014,1.962-.006,3.881.008,5.8a26.165,26.165,0,0,1-.411,5.749c.556.2,24.052.272,25.5.086a2.991,2.991,0,0,0-.106-.569,3.735,3.735,0,0,0-1.6-1.918,6.671,6.671,0,0,0-3.53-.924c-4.76.014-9.52.005-14.278.005h-1.022c0-.585-.028-1.115-.01-1.643a12.845,12.845,0,0,1,.993-4.651,9.849,9.849,0,0,1,7.537-5.958,13.21,13.21,0,0,1,2.526-.245c2.65-.03,5.3-.012,7.95-.01.254,0,.507.022.865.039.077,1.382.023,2.727.034,4.142-.356.015-.631.038-.905.039-2.573,0-5.145-.019-7.718.014a8.911,8.911,0,0,0-2.206.284,5.288,5.288,0,0,0-3.651,3.568,1.278,1.278,0,0,0,0,.322h.825c3.164,0,6.328.006,9.493,0a11.628,11.628,0,0,1,3.721.553,9.414,9.414,0,0,1,6.134,5.961c.124.334.254.666.4,1.041a13.269,13.269,0,0,0,1.467-.01,2.086,2.086,0,0,0,1.785-1.861,13.491,13.491,0,0,0,.052-1.772,7.762,7.762,0,0,1,1.989-5.368,8.292,8.292,0,0,1,7.486-2.781,7.63,7.63,0,0,1,1.209.228,6.753,6.753,0,0,1,4.9,4.3,8.988,8.988,0,0,1-.6,8.231,7.563,7.563,0,0,1-5.395,3.5A8.808,8.808,0,0,1,5085.276-2246.156Zm1.928-6.437c0,.128-.007.257,0,.385a3.589,3.589,0,0,0,3.414,3.437,3.432,3.432,0,0,0,3.6-3.1,6.231,6.231,0,0,0-.078-1.827,3.455,3.455,0,0,0-4.33-2.542A3.552,3.552,0,0,0,5087.2-2252.593Z"
+                                                transform="translate(-5007.198 2265.182)" fill="#ce1f1f"></path>
+                                            <path id="Path_31775" data-name="Path 31775"
+                                                d="M5728.182-1806.5c-1.621.058-3.124.056-4.721.007v-.915c0-2.907.011-5.814-.007-8.722a25.224,25.224,0,0,0-.157-2.539,5.7,5.7,0,0,0-.343-1.418,3.033,3.033,0,0,0-4.153-1.795,3.793,3.793,0,0,0-2.321,2.526,10.811,10.811,0,0,0-.466,2.8c-.064,3.009-.038,6.019-.046,9.03v.883a18.208,18.208,0,0,1-4.576.111c-.173-.544-.218-18.4-.041-19.512h4.6v1.974l.161.073.651-.588a7.273,7.273,0,0,1,6.643-1.831,5.571,5.571,0,0,1,3.6,2.589c.126.193.249.389.381.578.024.036.087.047.166.085.22-.27.443-.549.672-.821a7.311,7.311,0,0,1,8.471-2.021,5.293,5.293,0,0,1,3.245,4.039,23.756,23.756,0,0,1,.327,3.679c.038,3.678.009,7.358,0,11.037,0,.225-.031.45-.054.761-1.518.054-3,.039-4.562.006-.022-.352-.057-.649-.058-.946,0-2.856.019-5.712-.013-8.567a27.353,27.353,0,0,0-.237-3.3,2.861,2.861,0,0,0-2.083-2.687,3.577,3.577,0,0,0-3.716,1.109,4.5,4.5,0,0,0-1.179,2.634,23.58,23.58,0,0,0-.176,2.536c-.022,2.779-.008,5.557-.009,8.336Z"
+                                                transform="translate(-5656.841 1860.798)" fill="#ce1f1f"></path>
+                                            <path id="Path_31776" data-name="Path 31776"
+                                                d="M5440.342-1824.536v-1.748a24.289,24.289,0,0,1,4.565-.08c.17.6.184,18.785,0,19.522h-4.59v-1.932a6.835,6.835,0,0,0-.6.427,7.946,7.946,0,0,1-10.968-.257,10.268,10.268,0,0,1-3.233-7.12,12.182,12.182,0,0,1,.813-5.522,8.751,8.751,0,0,1,5.559-5.313,7.763,7.763,0,0,1,7.652,1.593c.208.175.413.352.619.528Zm.071,7.979c-.076-.761-.09-1.356-.2-1.933a4.569,4.569,0,0,0-3.452-3.76,4.782,4.782,0,0,0-5.127,1.43,5.747,5.747,0,0,0-1.452,3.651,6.155,6.155,0,0,0,1.885,5.172,4.89,4.89,0,0,0,7.978-2.293A22.143,22.143,0,0,0,5440.413-1816.557Z"
+                                                transform="translate(-5393.175 1861.118)" fill="#ce1f1f"></path>
+                                            <path id="Path_31777" data-name="Path 31777"
+                                                d="M5024.211-1824.009v-2.114h4.525c.2.594.229,18.677.013,19.57-1.451.031-2.93.033-4.494-.01-.033-.638-.064-1.234-.1-2-.343.287-.57.473-.793.663a7.514,7.514,0,0,1-5.323,1.87,7.823,7.823,0,0,1-4.574-1.621,10.018,10.018,0,0,1-4.01-7.038,12.856,12.856,0,0,1,.55-5.789,9.916,9.916,0,0,1,2.925-4.28,8.05,8.05,0,0,1,10.529.082C5023.654-1824.5,5023.859-1824.321,5024.211-1824.009Zm.086,7.663c-.073-.7-.1-1.236-.194-1.765a4.577,4.577,0,0,0-3.276-3.825,4.781,4.781,0,0,0-5.128,1.155,5.776,5.776,0,0,0-1.674,4.109,6.2,6.2,0,0,0,1.81,4.83,4.9,4.9,0,0,0,8.065-2.149A19.976,19.976,0,0,0,5024.3-1816.346Z"
+                                                transform="translate(-5009.178 1860.871)" fill="#ce1f1f"></path>
+                                            <path id="Path_31778" data-name="Path 31778"
+                                                d="M6134.212-1815.152h-15.306a4.87,4.87,0,0,0,2.708,4.04c2.7,1.281,5.147.677,7.35-1.3l3.9,1.912a8.374,8.374,0,0,1-3.276,3.084,10.762,10.762,0,0,1-10.225-.01,9.291,9.291,0,0,1-4.957-7.636,11.155,11.155,0,0,1,.3-4.44c1.18-3.966,3.688-6.629,7.862-7.221,6.418-.911,10.428,3.053,11.355,7.844a26.622,26.622,0,0,1,.284,2.681C6134.237-1815.9,6134.212-1815.592,6134.212-1815.152Zm-14.99-3.854h10.133c-.117-1.727-2.287-3.5-4.406-3.666A5.2,5.2,0,0,0,6119.223-1819.007Z"
+                                                transform="translate(-6028.774 1861.032)" fill="#ce1f1f"></path>
+                                            <path id="Path_31779" data-name="Path 31779"
+                                                d="M6368.916-1810.935l7.193,10.305c-.351.038-.565.081-.782.083-1.312.006-2.624-.015-3.935.012a1.135,1.135,0,0,1-1.078-.562c-1.188-1.742-2.408-3.461-3.62-5.187-.143-.2-.3-.4-.514-.682-.212.287-.381.5-.537.726-1.189,1.709-2.391,3.411-3.556,5.137a1.126,1.126,0,0,1-1.073.568c-1.284-.029-2.571-.007-3.857-.011-.2,0-.4-.029-.732-.054a15.535,15.535,0,0,1,1.157-1.768c.387-.576.791-1.141,1.188-1.71s.794-1.139,1.189-1.709l1.145-1.647c.4-.57.795-1.138,1.189-1.709s.78-1.14,1.193-1.744l-6.418-9.2a4.135,4.135,0,0,1,.553-.084c1.416-.006,2.829.015,4.244-.014a1,1,0,0,1,.946.5c.955,1.4,1.936,2.787,2.91,4.177.142.2.3.4.506.666.217-.294.387-.511.544-.737.972-1.391,1.946-2.781,2.907-4.179a.811.811,0,0,1,.748-.424c1.566.021,3.134.009,4.683.009a.614.614,0,0,1,.059.092.107.107,0,0,1,.012.07.985.985,0,0,1-.1.208C6373.044-1816.873,6371-1813.939,6368.916-1810.935Z"
+                                                transform="translate(-6252.176 1854.88)" fill="#ce1f1f"></path>
+                                            <path id="Path_31780" data-name="Path 31780"
+                                                d="M5295.106-1827.258h4.318c.027.484.051.937.078,1.417.354,0,.5-.277.688-.456a5.4,5.4,0,0,1,2.945-1.555,6.346,6.346,0,0,1,3.873.783l-2.612,3.674c-.46-.041-.939-.114-1.42-.119a2.643,2.643,0,0,0-2.622,1.679,7.875,7.875,0,0,0-.557,2.068,20.861,20.861,0,0,0-.144,2.691c-.018,2.8-.006,5.6-.006,8.406v.817a16.681,16.681,0,0,1-4.535.084C5294.931-1808.383,5294.914-1826.5,5295.106-1827.258Z"
+                                                transform="translate(-5272.734 1862.005)" fill="#ce1f1f"></path>
+                                            <path id="Path_31781" data-name="Path 31781"
+                                                d="M6331.625-2209.422h5.243c.016.306.043.579.043.853,0,4.267,0,8.533.006,12.8a10.4,10.4,0,0,1-1.1,4.91,6.775,6.775,0,0,1-3.784,3.218.511.511,0,0,1-.672-.167c-.923-1.167-1.856-2.327-2.818-3.529a2.037,2.037,0,0,1,.327-.223,4.071,4.071,0,0,0,2.637-3.907c.1-1.872.1-3.75.109-5.625.017-2.442,0-4.884,0-7.325Z"
+                                                transform="translate(-6226.453 2214.04)" fill="#ce1f1f"></path>
+                                            <path id="Path_31782" data-name="Path 31782"
+                                                d="M6246.318-2248.154h-5.138c-.162-.59-.194-20.1-.034-21h5.172Z"
+                                                transform="translate(-6145.708 2269.156)" fill="#ce1f1f"></path>
+                                            <path id="Path_31783" data-name="Path 31783"
+                                                d="M6495.643-2269.189h5.106c.176.519.233,19.94.04,21.029-1.683.011-3.388,0-5.146,0Z"
+                                                transform="translate(-6380.638 2269.189)" fill="#ce1f1f"></path>
+                                        </g>
+                                    </svg>
+                                    ارامكس
+                                </div>
+                                <div class="method-details">
+                                    <div class="d-flex align-items-center">
+                                        <div class="icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="14.172" height="14.172"
+                                                viewBox="0 0 14.172 14.172">
+                                                <path id="usd-circle_1_" data-name="usd-circle (1)"
+                                                    d="M7.086,0a7.086,7.086,0,1,0,7.086,7.086A7.094,7.094,0,0,0,7.086,0Zm0,12.991a5.9,5.9,0,1,1,5.9-5.9A5.912,5.912,0,0,1,7.086,12.991ZM9.448,8.267a1.774,1.774,0,0,1-1.771,1.771v.59a.59.59,0,1,1-1.181,0v-.59H6.337A1.778,1.778,0,0,1,4.8,9.153a.59.59,0,0,1,1.022-.592.592.592,0,0,0,.512.3H7.676a.591.591,0,0,0,.59-.59.454.454,0,0,0-.38-.449l-1.8-.3A1.63,1.63,0,0,1,4.723,5.9,1.774,1.774,0,0,1,6.495,4.133v-.59a.59.59,0,1,1,1.181,0v.59h.158a1.778,1.778,0,0,1,1.534.886.59.59,0,1,1-1.022.591.593.593,0,0,0-.512-.3H6.5a.591.591,0,0,0-.59.59.454.454,0,0,0,.38.449l1.8.3A1.63,1.63,0,0,1,9.448,8.268Z"
+                                                    fill="#090326"></path>
+                                            </svg>
+                                        </div>
+                                        25.00 ريال
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <div class="icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="14.172" height="12.991"
+                                                viewBox="0 0 14.172 12.991">
+                                                <path id="shipping-fast_8_" data-name="shipping-fast (8)"
+                                                    d="M11.219,3.362H9.993A2.949,2.949,0,0,0,7.823,1.019a.59.59,0,1,0-.294,1.143A1.771,1.771,0,0,1,8.857,3.878v6.57h-6.5A1.182,1.182,0,0,1,1.181,9.267V6.9H2.657a.59.59,0,1,0,0-1.181H1.181A1.182,1.182,0,0,0,0,6.9V9.267a2.366,2.366,0,0,0,1.8,2.3,2.067,2.067,0,1,0,4.079.067H8.289a2.045,2.045,0,0,0-.022.3,2.067,2.067,0,1,0,4.1-.362,2.366,2.366,0,0,0,1.8-2.3V6.314a2.956,2.956,0,0,0-2.952-2.952Zm1.771,2.952V6.9H10.038V4.543h1.181A1.774,1.774,0,0,1,12.991,6.314Zm-8.267,5.61a.886.886,0,1,1-1.771,0,.836.836,0,0,1,.054-.3H4.671a.836.836,0,0,1,.054.3Zm5.61.886a.887.887,0,0,1-.886-.886.836.836,0,0,1,.054-.3h1.665a.836.836,0,0,1,.054.3.887.887,0,0,1-.886.886Zm1.476-2.362H10.038V8.086h2.952V9.267A1.182,1.182,0,0,1,11.81,10.448ZM0,1.59A.59.59,0,0,1,.59,1H5.405a.59.59,0,0,1,0,1.181H.59A.59.59,0,0,1,0,1.59ZM0,3.952a.59.59,0,0,1,.59-.59H4.224a.59.59,0,0,1,0,1.181H.59A.59.59,0,0,1,0,3.952Z"
+                                                    transform="translate(0 -1)" fill="#090326">
+                                                </path>
+                                            </svg>
+                                        </div>
+                                        من (3-5) أيام
+                                    </div>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+                    <input type="number" id="PreSelectShippingProviderId" hidden="">
+                    <div class="method-box">
+
+                        <input id="shippingoption_2" class="d-none" type="radio" name="shippingoption" value="4_0_0">
+                        <label for="shippingoption_2" class="text-center w-100" style="height: 140px;">
+                            <div class="check">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 27 27">
+                                    <g transform="translate(-0.28 0.212)">
+                                        <g transform="translate(0.28 -0.212)" fill="#fff" stroke="#090326"
+                                            stroke-width="2">
+                                            <circle cx="13.5" cy="13.5" r="13.5" stroke="none">
+                                            </circle>
+                                            <circle cx="13.5" cy="13.5" r="12" fill="none">
+                                            </circle>
+                                        </g>
+                                        <path
+                                            d="M5.053,15.453.218,10.618a.744.744,0,0,1,0-1.052L1.27,8.514a.744.744,0,0,1,1.052,0l3.257,3.257L12.555,4.8a.744.744,0,0,1,1.052,0l1.052,1.052a.744.744,0,0,1,0,1.052L6.1,15.453A.744.744,0,0,1,5.053,15.453Z"
+                                            transform="translate(5.961 3.276)" fill="#090326">
+                                        </path>
+                                    </g>
+                                </svg>
+                            </div>
+                            <div class="content d-flex align-items-center justify-content-center flex-column">
+                                <div class="method-img d-flex align-items-center flex-column w-100">
+                                    <img class="img-fluid" style="width: 70px;"
+                                        src="https://bird-eye-staging.s3.me-south-1.amazonaws.com/0003372_0.jpeg?X-Amz-Expires=518400&amp;X-Amz-Security-Token=IQoJb3JpZ2luX2VjEBgaCm1lLXNvdXRoLTEiRjBEAiB4RWCIC%2BJ%2F%2BAM5vdXMcKF2vifRUT9GOgCb83wsPlXYZAIgC5JpW%2Fl8wuNBjoyBS2hDmty8644qrDMJs6KJsBD3wnYqgQQIpP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARABGgw4NjgwODI5Mjk1NDYiDLSF05S5aWPM0ftW2yrVAwo6TaxJG5uN2GJBJoQc%2Fop56beIfN2H3yZMTIt9rGD6%2Bq2uC0VAZl5HGNN7adY7sarwpRWY2qCickhWElR3ZGHXYHO3MCsDjT3mTm4MwwBUTf5tT4O9BJDnfhDdGdIF5j4WzX8QitJgOAsV5jZAZYF6mXVyV5Kd4EbX3%2Bs8leOZgaT2STd%2BlDshoWUyIrI44w7no1slCcARAcEKJFnvNnkDNDyJl%2FSlgTtRkJ7jU099KONOs9T1Li4oSeFZEMZTTAXm7FOALgqPXItbTXTCpsV0dayG06YiXjLdjbW8Fsg9OOdCtJcUBKS16jCGQ3FU7%2F9scM5akjeBI5uyGGHY2YGtsbR5hg9IRf%2BuZOeBmoaG3f7ZCKbrmxPIUtrYccJZzrL71FT6akS53zokt7aap0kuRnuQDgDTnxy7%2BW5%2Bm3DAW2dyqGd8N9hPEI7kLncZezr5W%2FoPUG%2BeljRBL%2BL4ZTLRWTI%2FB4xb%2BPgr6w1U1%2Fq8X0jPTVqRnN7FlinR9WmWSrDmM%2FeGns2811O7sPZGLvc4Px3gtxhS47o1IKsSiAtdoCEDSMAdG8ohwm1z2SUgNV%2FxlBw7H3UdpVDxUYgm8AW%2FltpiIXlq%2BVb6CJlft6ae1Fi8MO0w88r0twY6pgG9k1wtg9joupUL2oVYYwzDg2OMp0YVAZxq0rxQpsbtKH56XijEn4uNgXLePik7PDzTJDkJCKNDQxnP%2FFI0lqzw80Jqnnniq7tcSiB2Fe5AdSp4eGCxz0VxQ86VT3N6mv%2BfF2R21y219XwNWzg6Dall%2F%2Bvgma%2Bu2K7KD%2FvuvUHwyaZmFsojlApH7xZ2ztbq2Xne7zerBHWgwqjElkuiE7evaQgc4joO&amp;X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=ASIA4UHOGJ6FA4Q4IMTF%2F20241002%2Fme-south-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20241002T124308Z&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=6bc7f28ca19e3579aaf761bc2199e2408e3f84603e47b72d48268884364c9bcc"
+                                        alt="استلام من الفرع">
+                                    <p class="mb-1" style="font-weight: bold;">استلام من الفرع
+                                    </p>
+                                    <p class="mb-0" style="font-size: 14px;"></p>
+                                </div>
+                                <div class="method-details w-100">
+                                    <div class="d-flex align-items-center">
+                                        <div class="icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="14.172" height="14.172"
+                                                viewBox="0 0 14.172 14.172">
+                                                <path id="usd-circle_1_" data-name="usd-circle (1)"
+                                                    d="M7.086,0a7.086,7.086,0,1,0,7.086,7.086A7.094,7.094,0,0,0,7.086,0Zm0,12.991a5.9,5.9,0,1,1,5.9-5.9A5.912,5.912,0,0,1,7.086,12.991ZM9.448,8.267a1.774,1.774,0,0,1-1.771,1.771v.59a.59.59,0,1,1-1.181,0v-.59H6.337A1.778,1.778,0,0,1,4.8,9.153a.59.59,0,0,1,1.022-.592.592.592,0,0,0,.512.3H7.676a.591.591,0,0,0,.59-.59.454.454,0,0,0-.38-.449l-1.8-.3A1.63,1.63,0,0,1,4.723,5.9,1.774,1.774,0,0,1,6.495,4.133v-.59a.59.59,0,1,1,1.181,0v.59h.158a1.778,1.778,0,0,1,1.534.886.59.59,0,1,1-1.022.591.593.593,0,0,0-.512-.3H6.5a.591.591,0,0,0-.59.59.454.454,0,0,0,.38.449l1.8.3A1.63,1.63,0,0,1,9.448,8.268Z"
+                                                    fill="#090326"></path>
+                                            </svg>
+                                        </div>
+
+                                        ر.س
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <div class="icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="14.172" height="12.991"
+                                                viewBox="0 0 14.172 12.991">
+                                                <path id="shipping-fast_8_" data-name="shipping-fast (8)"
+                                                    d="M11.219,3.362H9.993A2.949,2.949,0,0,0,7.823,1.019a.59.59,0,1,0-.294,1.143A1.771,1.771,0,0,1,8.857,3.878v6.57h-6.5A1.182,1.182,0,0,1,1.181,9.267V6.9H2.657a.59.59,0,1,0,0-1.181H1.181A1.182,1.182,0,0,0,0,6.9V9.267a2.366,2.366,0,0,0,1.8,2.3,2.067,2.067,0,1,0,4.079.067H8.289a2.045,2.045,0,0,0-.022.3,2.067,2.067,0,1,0,4.1-.362,2.366,2.366,0,0,0,1.8-2.3V6.314a2.956,2.956,0,0,0-2.952-2.952Zm1.771,2.952V6.9H10.038V4.543h1.181A1.774,1.774,0,0,1,12.991,6.314Zm-8.267,5.61a.886.886,0,1,1-1.771,0,.836.836,0,0,1,.054-.3H4.671a.836.836,0,0,1,.054.3Zm5.61.886a.887.887,0,0,1-.886-.886.836.836,0,0,1,.054-.3h1.665a.836.836,0,0,1,.054.3.887.887,0,0,1-.886.886Zm1.476-2.362H10.038V8.086h2.952V9.267A1.182,1.182,0,0,1,11.81,10.448ZM0,1.59A.59.59,0,0,1,.59,1H5.405a.59.59,0,0,1,0,1.181H.59A.59.59,0,0,1,0,1.59ZM0,3.952a.59.59,0,0,1,.59-.59H4.224a.59.59,0,0,1,0,1.181H.59A.59.59,0,0,1,0,3.952Z"
+                                                    transform="translate(0 -1)" fill="#090326">
+                                                </path>
+                                            </svg>
+                                        </div>
+                                        استلام
+                                    </div>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+
+                </div>
+                <textarea cols="" rows="5" id="CustomerNoteId" placeholder="إضافة ملاحظة" class="p-3 w-100"></textarea>
+                <script>
+                    $(document).ready(function () {
+                        ShippingMethod.save();
+                    })
+                </script>
+            </div>
+            <input name="__RequestVerificationToken" type="hidden"
+                value="CfDJ8GG-0JxmiLNPrVSgjZi-JEZiWd3chUHwJJHm4RiOcWHC3N13rm90POZQDENBPvw7mOYPpAzttIa3g19upINl2QpW50-vy1ViF2B2iWdOiGSP-1BCYjUfy6oMMcNHmXM1v5tX39K2h7yWT-wN4BEGVRc">
+        </form>
+
+    </div>
+</div>
+
+<!-- Payment Method -->
+<div id="opc-payment_method" class="d-flex flex-column justify-content-between py-3" *ngIf="!showAddAddress">
+    <div id="checkout-step-payment-method">
+        <h3 class="main-title d-flex align-items-center mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 54 54">
+                <path d="M0,0H54V54H0Z" fill="none"></path>
+                <path
+                    d="M21,2,37.421,7.13A2.25,2.25,0,0,1,39,9.279V13.25h4.5a2.25,2.25,0,0,1,2.25,2.25v18a2.25,2.25,0,0,1-2.25,2.25l-7.245,0a13.473,13.473,0,0,1-3.15,2.993L21,47,8.9,38.747A13.5,13.5,0,0,1,3,27.592V9.279A2.25,2.25,0,0,1,4.58,7.132Zm0,4.712L7.5,10.932V27.592a9,9,0,0,0,3.507,7.132l.424.3L21,41.555l8.51-5.8H18.75A2.25,2.25,0,0,1,16.5,33.5v-18a2.25,2.25,0,0,1,2.25-2.25H34.5V10.932ZM21,24.5v6.75H41.25V24.5ZM21,20H41.25V17.75H21Z"
+                    transform="translate(3.75 2.5)"></path>
+            </svg>
+            <span class="ml-2">طريقة الدفع او السداد</span>
+            <span class="please-wait ml-2" id="shipping-method-please-wait" style="color: green; display: none;">جاري
+                التحميل...</span>
+        </h3>
+        <form action="" id="co-payment-method-form" method="post">
+            <div id="checkout-payment-method-load">
+                <div class="payment-methods d-flex">
+                    <input type="radio" class="d-none" name="paymentmethod" value="MyFatoorah" checked="checked">
+                    <input type="radio" class="d-none" name="orderPaymentmethodId" value="1" checked="checked">
+                    <div id="method-box-6" class="method-box">
+                        <input id="paymentmethod_0" class="d-none paymentMethodsRadioBtns" type="radio"
+                            name="paymentmethodId" value="6" checked="checked">
+                        <label for="paymentmethod_0" class="text-center w-100">
+                            <div class="d-flex align-items-center justify-content-center position-relative">
+                                <div class="check">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 27 27">
+                                        <g transform="translate(-0.28 0.212)">
+                                            <g transform="translate(0.28 -0.212)" fill="#fff" stroke="#090326"
+                                                stroke-width="2">
+                                                <circle cx="13.5" cy="13.5" r="13.5" stroke="none"></circle>
+                                                <circle cx="13.5" cy="13.5" r="12" fill="none">
+                                                </circle>
+                                            </g>
+                                            <path
+                                                d="M5.053,15.453.218,10.618a.744.744,0,0,1,0-1.052L1.27,8.514a.744.744,0,0,1,1.052,0l3.257,3.257L12.555,4.8a.744.744,0,0,1,1.052,0l1.052,1.052a.744.744,0,0,1,0,1.052L6.1,15.453A.744.744,0,0,1,5.053,15.453Z"
+                                                transform="translate(5.961 3.276)" fill="#090326"></path>
+                                        </g>
+                                    </svg>
+                                </div>
+                                <img src="https://demo.myfatoorah.com/imgs/payment-methods/md.png" height="40">
+                            </div>
+                            <h4 class="title mb-0 mt-3">
+                                مدى
+                                <br>
+                                <small style="color:red">(+8.48 ريال)</small>
+                            </h4>
+                        </label>
+                    </div>
+                    <div id="method-box-2" class="method-box">
+                        <input id="paymentmethod_1" class="d-none paymentMethodsRadioBtns" type="radio"
+                            name="paymentmethodId" value="2">
+                        <label for="paymentmethod_1" class="text-center w-100">
+                            <div class="d-flex align-items-center justify-content-center position-relative">
+                                <div class="check">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 27 27">
+                                        <g transform="translate(-0.28 0.212)">
+                                            <g transform="translate(0.28 -0.212)" fill="#fff" stroke="#090326"
+                                                stroke-width="2">
+                                                <circle cx="13.5" cy="13.5" r="13.5" stroke="none"></circle>
+                                                <circle cx="13.5" cy="13.5" r="12" fill="none">
+                                                </circle>
+                                            </g>
+                                            <path
+                                                d="M5.053,15.453.218,10.618a.744.744,0,0,1,0-1.052L1.27,8.514a.744.744,0,0,1,1.052,0l3.257,3.257L12.555,4.8a.744.744,0,0,1,1.052,0l1.052,1.052a.744.744,0,0,1,0,1.052L6.1,15.453A.744.744,0,0,1,5.053,15.453Z"
+                                                transform="translate(5.961 3.276)" fill="#090326"></path>
+                                        </g>
+                                    </svg>
+                                </div>
+                                <img src="https://demo.myfatoorah.com/imgs/payment-methods/vm.png" height="40">
+                            </div>
+                            <h4 class="title mb-0 mt-3">
+                                فيزا / ماستر
+                                <br>
+                                <small style="color:red">(+8.48 ريال)</small>
+                            </h4>
+                        </label>
+                    </div>
+                    <div id="method-box-3" class="method-box">
+                        <input id="paymentmethod_2" class="d-none paymentMethodsRadioBtns" type="radio"
+                            name="paymentmethodId" value="3">
+                        <label for="paymentmethod_2" class="text-center w-100">
+                            <div class="d-flex align-items-center justify-content-center position-relative">
+                                <div class="check">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 27 27">
+                                        <g transform="translate(-0.28 0.212)">
+                                            <g transform="translate(0.28 -0.212)" fill="#fff" stroke="#090326"
+                                                stroke-width="2">
+                                                <circle cx="13.5" cy="13.5" r="13.5" stroke="none"></circle>
+                                                <circle cx="13.5" cy="13.5" r="12" fill="none">
+                                                </circle>
+                                            </g>
+                                            <path
+                                                d="M5.053,15.453.218,10.618a.744.744,0,0,1,0-1.052L1.27,8.514a.744.744,0,0,1,1.052,0l3.257,3.257L12.555,4.8a.744.744,0,0,1,1.052,0l1.052,1.052a.744.744,0,0,1,0,1.052L6.1,15.453A.744.744,0,0,1,5.053,15.453Z"
+                                                transform="translate(5.961 3.276)" fill="#090326"></path>
+                                        </g>
+                                    </svg>
+                                </div>
+                                <img src="https://demo.myfatoorah.com/imgs/payment-methods/ae.png" height="40">
+                            </div>
+                            <h4 class="title mb-0 mt-3">
+                                اميكس
+                                <br>
+                                <small style="color:red">(+0.03 ريال)</small>
+                            </h4>
+                        </label>
+                    </div>
+                    <div id="method-box-11" class="method-box" style="display: none;">
+                        <input id="paymentmethod_3" class="d-none paymentMethodsRadioBtns" type="radio"
+                            name="paymentmethodId" value="11">
+                        <label for="paymentmethod_3" class="text-center w-100">
+                            <div class="d-flex align-items-center justify-content-center position-relative">
+                                <div class="check">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 27 27">
+                                        <g transform="translate(-0.28 0.212)">
+                                            <g transform="translate(0.28 -0.212)" fill="#fff" stroke="#090326"
+                                                stroke-width="2">
+                                                <circle cx="13.5" cy="13.5" r="13.5" stroke="none"></circle>
+                                                <circle cx="13.5" cy="13.5" r="12" fill="none">
+                                                </circle>
+                                            </g>
+                                            <path
+                                                d="M5.053,15.453.218,10.618a.744.744,0,0,1,0-1.052L1.27,8.514a.744.744,0,0,1,1.052,0l3.257,3.257L12.555,4.8a.744.744,0,0,1,1.052,0l1.052,1.052a.744.744,0,0,1,0,1.052L6.1,15.453A.744.744,0,0,1,5.053,15.453Z"
+                                                transform="translate(5.961 3.276)" fill="#090326"></path>
+                                        </g>
+                                    </svg>
+                                </div>
+                                <img src="https://demo.myfatoorah.com/imgs/payment-methods/ap.png" height="40">
+                            </div>
+                            <h4 class="title mb-0 mt-3">
+                                أبل الدفع
+                                <br>
+                                <small style="color:red">(+12.35 ريال)</small>
+                            </h4>
+                        </label>
+                    </div>
+                    <div id="method-box-1" class="method-box">
+                        <input id="paymentmethod_4" class="d-none paymentMethodsRadioBtns" type="radio"
+                            name="paymentmethodId" value="1">
+                        <label for="paymentmethod_4" class="text-center w-100">
+                            <div class="d-flex align-items-center justify-content-center position-relative">
+                                <div class="check">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 27 27">
+                                        <g transform="translate(-0.28 0.212)">
+                                            <g transform="translate(0.28 -0.212)" fill="#fff" stroke="#090326"
+                                                stroke-width="2">
+                                                <circle cx="13.5" cy="13.5" r="13.5" stroke="none"></circle>
+                                                <circle cx="13.5" cy="13.5" r="12" fill="none">
+                                                </circle>
+                                            </g>
+                                            <path
+                                                d="M5.053,15.453.218,10.618a.744.744,0,0,1,0-1.052L1.27,8.514a.744.744,0,0,1,1.052,0l3.257,3.257L12.555,4.8a.744.744,0,0,1,1.052,0l1.052,1.052a.744.744,0,0,1,0,1.052L6.1,15.453A.744.744,0,0,1,5.053,15.453Z"
+                                                transform="translate(5.961 3.276)" fill="#090326"></path>
+                                        </g>
+                                    </svg>
+                                </div>
+                                <img src="https://demo.myfatoorah.com/imgs/payment-methods/kn.png" height="40">
+                            </div>
+                            <h4 class="title mb-0 mt-3">
+                                كي نت
+                                <br>
+                                <small style="color:red">(+6.89 ريال)</small>
+                            </h4>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Payment Iframe -->
+                <div id="embeddedPayment" class="d-flex">
+                    <div class="payment-form-container">
+                        <div id="card-element" style="height: 230px;">
+                            <iframe id="iframe" name="iframeCardView"
+                                src="https://demo.myfatoorah.com/embedded/v1/en/KWT/CardView/762884c4-0970-43b3-aa4c-d21bbf667a20"
+                                frameborder="0" style="width: 100%; height: 230px; margin: 0px; padding: 0px;">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <input name="__RequestVerificationToken" type="hidden"
+                value="CfDJ8GG-0JxmiLNPrVSgjZi-JEZiWd3chUHwJJHm4RiOcWHC3N13rm90POZQDENBPvw7mOYPpAzttIa3g19upINl2QpW50-vy1ViF2B2iWdOiGSP-1BCYjUfy6oMMcNHmXM1v5tX39K2h7yWT-wN4BEGVRc">
+        </form>
+
+    </div>
+</div>
+
+<!-- Add Address -->
+<div id="checkout-shipping-load" *ngIf="showAddAddress">
+    <div class="mb-4" id="shippingAddressList" style="display: none;">
+        <div id="HeaderOfShippingAddress" style="display:block">
+            <h3 class="main-title d-flex align-items-center mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 46.023 46.023">
+                    <path d="M0,0H46.023V46.023H0Z" fill="none"></path>
+                    <path
+                        d="M20.259,38.243l9.492-9.492a13.424,13.424,0,1,0-18.985,0Zm0,5.423-12.2-12.2a17.259,17.259,0,1,1,24.408,0Zm0-20.572a3.835,3.835,0,1,0-3.835-3.835A3.835,3.835,0,0,0,20.259,23.094Zm0,3.835a7.671,7.671,0,1,1,7.671-7.671A7.671,7.671,0,0,1,20.259,26.929Z"
+                        transform="translate(2.753 1.835)"></path>
+                </svg>
+                <span class="ml-2">{{ 'shippingAddress' | translate }}</span>
+            </h3>
+        </div>
+        <div id="HeaderOfShippingAddressLocation" class="flex-column" style="display:none">
+            <div class="d-flex justify-content-between align-items-center" style="width: 400px;">
+                <h3 class="main-title d-flex align-items-center mb-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 46.023 46.023">
+                        <path d="M0,0H46.023V46.023H0Z" fill="none"></path>
+                        <path
+                            d="M20.259,38.243l9.492-9.492a13.424,13.424,0,1,0-18.985,0Zm0,5.423-12.2-12.2a17.259,17.259,0,1,1,24.408,0Zm0-20.572a3.835,3.835,0,1,0-3.835-3.835A3.835,3.835,0,0,0,20.259,23.094Zm0,3.835a7.671,7.671,0,1,1,7.671-7.671A7.671,7.671,0,0,1,20.259,26.929Z"
+                            transform="translate(2.753 1.835)"></path>
+                    </svg>
+                    <span class="ml-2">موقعى</span>
+                </h3>
+                <button
+                    style="background:none;width: 170px;margin-inline: 10px;height: 37px;border:1px solid var(--primary-color);border-radius:5px;color:var(--primary-color);"
+                    onclick="Shipping.newAddress(true)">
+                    + اضف موقعك
+                </button>
+            </div>
+
+            <p style="margin-inline: 37px; margin-top: 10px; display:none" id="
+                PickupFromBranchShippingAddressP">
+                يرجى تحديد موقعك بدقة لاختيار الفرع الأقرب لك
+            </p>
+            <p style="margin-inline: 37px;margin-top: 10px; display:none" id="InstantShippingShippingAddressP">
+                يرجى تحديد موقعك بدقة لاختيار الفرع الاقرب لك ولكى يتمكن مندوبنا من الوصول
+                اليك بسهولة
+            </p>
+
+
+        </div>
+
+        <div asp-validation-summary="ModelOnly" style="color:red"></div>
+
+
+        <div style="color:gray;font-weight:bold;" hidden="">
+            <p>
+                <input asp-for="BillOnSameAddress" hidden="">
+                <label asp-for="BillOnSameAddress">استدخدام نفس {{ 'address' | translate }} لعنوان الدفع</label>
+            </p>
+        </div>
+        <div class="address-select shipping-addresses d-flex" id="shipping-addresses-form">
+            <div class="address-box" id="812">
+                <input class="d-none" type="radio" id="shippingAddress_812" name="shipping_address_id" value="0"
+                    onclick="Shipping.save()">
+                <label for="shippingAddress_812" class="w-100">
+                    <div class="check">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 27 27">
+                            <g transform="translate(-0.28 0.212)">
+                                <g transform="translate(0.28 -0.212)" fill="#fff" stroke="#090326" stroke-width="2">
+                                    <circle cx="13.5" cy="13.5" r="13.5" stroke="none">
+                                    </circle>
+                                    <circle cx="13.5" cy="13.5" r="12" fill="none"></circle>
+                                </g>
+                                <path
+                                    d="M5.053,15.453.218,10.618a.744.744,0,0,1,0-1.052L1.27,8.514a.744.744,0,0,1,1.052,0l3.257,3.257L12.555,4.8a.744.744,0,0,1,1.052,0l1.052,1.052a.744.744,0,0,1,0,1.052L6.1,15.453A.744.744,0,0,1,5.053,15.453Z"
+                                    transform="translate(5.961 3.276)" fill="#090326">
+                                </path>
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="content">
+                        <p class="mb-1"><span class="title">{{ 'country' | translate }}: </span><span class="value">Saudi Arabia</span></p>
+                        <p class="mb-1"><span class="title">{{ 'city' | translate }}: </span><span class="value">Riyadh</span></p>
+                        <p class="mb-1"><span class="title">الحي: </span><span class="value">الرياض</span></p>
+                        <p class="mb-1"><span class="title">{{ 'address' | translate }}: </span><span class="value">3689 شارع بجاد بن قيس,
+                                المربع, الرياض,
+                                12613</span></p>
+                        <p class="mb-1"><span class="title">رقم الهاتف: </span><span class="value">+966122345433</span>
+                        </p>
+                    </div>
+                    <div class="actions d-flex flex-column justify-content-between">
+                        <a class="collapse-actions collapsed" href="#address-actions_812" data-toggle="collapse"
+                            aria-expanded="false">...</a>
+                        <ul class="list-unstyled mb-0 collapse" id="address-actions_812">
+                            <li><a class="edit" href="javascript:editAddress(812)">{{ 'edit' | translate }}</a>
+                            </li>
+                            <li><a class="delete" href="javascript:deleteAddress(812)">{{ 'delete' | translate }}</a></li>
+                        </ul>
+                    </div>
+                </label>
+            </div>
+            <div class="address-box" id="1687">
+                <input class="d-none" type="radio" id="shippingAddress_1687" name="shipping_address_id" value="0"
+                    onclick="Shipping.save()" checked="">
+                <label for="shippingAddress_1687" class="w-100">
+                    <div class="check">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 27 27">
+                            <g transform="translate(-0.28 0.212)">
+                                <g transform="translate(0.28 -0.212)" fill="#fff" stroke="#090326" stroke-width="2">
+                                    <circle cx="13.5" cy="13.5" r="13.5" stroke="none">
+                                    </circle>
+                                    <circle cx="13.5" cy="13.5" r="12" fill="none"></circle>
+                                </g>
+                                <path
+                                    d="M5.053,15.453.218,10.618a.744.744,0,0,1,0-1.052L1.27,8.514a.744.744,0,0,1,1.052,0l3.257,3.257L12.555,4.8a.744.744,0,0,1,1.052,0l1.052,1.052a.744.744,0,0,1,0,1.052L6.1,15.453A.744.744,0,0,1,5.053,15.453Z"
+                                    transform="translate(5.961 3.276)" fill="#090326">
+                                </path>
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="content">
+                        <p class="mb-1"><span class="title">{{ 'country' | translate }}: </span><span class="value">Saudi Arabia</span></p>
+                        <p class="mb-1"><span class="title">{{ 'city' | translate }}: </span><span class="value">Madinah</span></p>
+                        <p class="mb-1"><span class="title">الحي: </span><span class="value">Al Madinah Al
+                                Munawwarah</span></p>
+                        <p class="mb-1"><span class="title">{{ 'address' | translate }}: </span><span class="value">3780 Asad Bin Haritha
+                                Street</span></p>
+                        <p class="mb-1"><span class="title">رقم الهاتف: </span><span class="value">+966547822455</span>
+                        </p>
+                    </div>
+                    <div class="actions d-flex flex-column justify-content-between">
+                        <a class="collapse-actions collapsed" href="#address-actions_1687" data-toggle="collapse"
+                            aria-expanded="false">...</a>
+                        <ul class="list-unstyled mb-0 collapse" id="address-actions_1687">
+                            <li><a class="edit" href="javascript:editAddress(1687)">{{ 'edit' | translate }}</a></li>
+                            <li><a class="delete" href="javascript:deleteAddress(1687)">{{ 'delete' | translate }}</a></li>
+                        </ul>
+                    </div>
+                </label>
+            </div>
+        </div>
+        <div class="address-btns  justify-content-center align-items-center d-flex">
+            <button type="button" class="btn add justify-content-center align-items-center" id="BtnAddShippingAddress"
+                onclick="Shipping.newAddress(true)" style="display: flex;"><span class="icon mr-2">+</span><span
+                    class="title">اضف عنوان جديد</span></button>
+        </div>
+    </div>
+
+    <div class="section new-shipping-address" id="shippingNewAddress-form" style="">
+        <div class="address-add" style="display: block;">
+            <h3 class="main-title d-flex align-items-center mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 47 47">
+                    <path d="M0,0H47V47H0Z" fill="none"></path>
+                    <path
+                        d="M20.625,39.012l9.694-9.694a13.708,13.708,0,1,0-19.388,0Zm0,5.538L8.162,32.088a17.625,17.625,0,1,1,24.926,0ZM18.667,17.667V11.792h3.917v5.875h5.875v3.917H22.583v5.875H18.667V21.583H12.792V17.667Z"
+                        transform="translate(2.875 1.917)"></path>
+                </svg>
+                <span class="main ml-2">{{ 'shippingAddress' | translate }}</span>
+                <span class="sub" id="ShippingNewAddressTitle"> / إضافة عنوان جديد</span>
+            </h3>
+
+            <div class="enter-address">
+
+                <div id="newshippingaddressform">
+                    <!-- CSS and JS files for Search Box -->
+                    <style>
+                        .error-msg {
+                            color: red;
+                        }
+                    </style>
+                    <!-- CSS and JS files for Search Box -->
+                    <input class="address-id" type="hidden" data-val="true"
+                        data-val-required="The Id field is required." id="ShippingNewAddress_Id"
+                        name="ShippingNewAddress.Id" value="0">
+                    <input class="address-id" type="hidden" data-val="true" data-val-required="حدد الموقع على الخريطة"
+                        id="ShippingNewAddress_latlng" name="ShippingNewAddress.latlng" value="">
+                    <input hidden="" type="checkbox" data-val="true"
+                        data-val-required="The SelectedCityValid field is required."
+                        id="ShippingNewAddress_SelectedCityValid" name="ShippingNewAddress.SelectedCityValid"
+                        value="true">
+                    <input hidden="" type="text" id="ShippingNewAddress_AddressEn" name="ShippingNewAddress.AddressEn"
+                        value="">
+                    <input class="address-id" name="selectedCountryId" id="selectedCountryId" type="hidden" value="196">
+                    <input name="countrycode" id="countrycode" type="hidden">
+
+                    <div class="edit-address">
+                        <div class="row form-group mb-0">
+                            <div class="col-md-6 mb-3">
+                                <div class="input-group mb-0 align-items-center">
+                                    <input class="form-control" required="" placeholder="الإسم الأول" type="text"
+                                        data-val="true" data-val-regex="يجب أن تكون أحرف فقط"
+                                        data-val-regex-pattern="^([a-zA-Z\u0600-\u06FF]+[_ ]*[a-zA-Z\u0600-\u06FF]*)+$"
+                                        data-val-required="الإسم الأول مطلوب" id="ShippingNewAddress_FirstName"
+                                        name="ShippingNewAddress.FirstName" value="Ziyach">
+                                    <span class="error-msg">*</span>
+                                </div>
+                                <span class="error-msg field-validation-valid"
+                                    data-valmsg-for="ShippingNewAddress.FirstName" data-valmsg-replace="true"></span>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="input-group mb-0 align-items-center">
+                                    <input type="text" class="form-control" required="" placeholder="اسم العائلة"
+                                        data-val="true" data-val-regex="يجب أن تكون أحرف فقط"
+                                        data-val-regex-pattern="^([a-zA-Z\u0600-\u06FF]+[_ ]*[a-zA-Z\u0600-\u06FF]*)+$"
+                                        data-val-required="إسم العائلة مطلوب" id="ShippingNewAddress_LastName"
+                                        name="ShippingNewAddress.LastName" value="Essam">
+                                    <span class="error-msg">*</span>
+                                </div>
+                                <span class="error-msg field-validation-valid"
+                                    data-valmsg-for="ShippingNewAddress.LastName" data-valmsg-replace="true"></span>
+                            </div>
+                        </div>
+                        <div class="row form-group mb-0">
+                            <div class="col-md-6 mb-3">
+                                <div class="input-group mb-0 align-items-center account-phone-number">
+                                    <input type="text" class="form-control" required="" placeholder="رقم الهاتف"
+                                        minlength="9" maxlength="9" pattern="[0-9]+" data-val="true"
+                                        data-val-length="الحد المطلوب لطول للحقل هو 9 حرف" data-val-length-max="9"
+                                        data-val-length-min="9" data-val-regex="يجب أن يتكون رقم الهاتف من أرقام فقط"
+                                        data-val-regex-pattern="[0-9]+$" data-val-required="رقم الهاتف مطلوب"
+                                        id="ShippingNewAddress_PhoneNumber" name="ShippingNewAddress.PhoneNumber"
+                                        value="">
+                                    <span class="country-code">+966</span>
+                                    <span class="error-msg">*</span>
+                                </div>
+                                <span class="error-msg field-validation-valid"
+                                    data-valmsg-for="ShippingNewAddress.PhoneNumber" data-valmsg-replace="true"></span>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="input-group mb-0 align-items-center">
+                                    <input type="email" class="form-control" required="" placeholder="البريد الإلكتروني"
+                                        data-val="true" data-val-email="بريد خاطىء"
+                                        data-val-required="البريد الإلكتروني مطلوب" id="ShippingNewAddress_Email"
+                                        name="ShippingNewAddress.Email" value="ziadessam1019@gmail.com">
+                                    <span class="error-msg">*</span>
+                                </div>
+                                <span class="error-msg field-validation-valid"
+                                    data-valmsg-for="ShippingNewAddress.Email" data-valmsg-replace="true"></span>
+                            </div>
+                        </div>
+                        <div class="row form-group mb-0">
+                            <div class="col-md-6 mb-3">
+                                <div class="input-group mb-0 align-items-center">
+                                    <select class="form-control" data-trigger="country-select" data-val="true"
+                                        data-val-required="الدولة مطلوبة" id="ShippingNewAddress_CountryId"
+                                        name="ShippingNewAddress.CountryId">
+                                        <option selected="selected" value="196">Saudi Arabia
+                                        </option>
+                                    </select>
+                                    <span class="error-msg">*</span>
+                                </div>
+                                <span class="error-msg field-validation-valid"
+                                    data-valmsg-for="ShippingNewAddress.CountryId" data-valmsg-replace="true"></span>
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+                                <div class="input-group mb-0 align-items-center">
+                                    <select data-trigger="state-select" class="form-control" data-val="true"
+                                        data-val-required="The ArmxCityId field is required."
+                                        id="ShippingNewAddress_ArmxCityId" name="ShippingNewAddress.ArmxCityId">
+                                        <option value="0">اختار المحافظة</option>
+                                        <option value="1">Abha</option>
+                                        <option value="2">Abqaiq</option>
+                                    </select>
+                                    <span id="states-loading-progress" style="display: none;"
+                                        class="please-wait">انتظر...</span>
+                                    <span class="error-msg">*</span>
+                                </div>
+                                <span class="error-msg field-validation-valid"
+                                    data-valmsg-for="ShippingNewAddress.ArmxCityId" data-valmsg-replace="true"></span>
+                                <div id="validationShippingMapMsg" class="error-msg" hidden="">{{ 'address' | translate }} المحدد على
+                                    الخريطة ليس في {{ 'city' | translate }}
+                                    المحددة</div>
+                            </div>
+                        </div>
+                        <div class="row form-group mb-0">
+                            <div class="col-md-6 mb-3">
+                                <div class="input-group mb-0 align-items-center">
+                                    <input type="text" class="form-control" required="" placeholder="{{ 'city' | translate }}"
+                                        data-val="true" data-val-required="المدينة مطلوبة" id="ShippingNewAddress_City"
+                                        name="ShippingNewAddress.City" value="">
+                                    <span class="error-msg">*</span>
+                                </div>
+                                <span class="error-msg field-validation-valid" data-valmsg-for="ShippingNewAddress.City"
+                                    data-valmsg-replace="true"></span>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="input-group mb-0 align-items-center">
+                                    <input type="text" class="form-control" required="" placeholder="الرقم البريدي"
+                                        data-val="true" data-val-length="الحد المطلوب لطول للحقل هو 5 حرف"
+                                        data-val-length-max="5" data-val-length-min="5"
+                                        data-val-regex="يجب أن يتكون الرقم البريدي من أرقام فقط"
+                                        data-val-regex-pattern="[0-9]+$" data-val-required="الرقم البريدي مطلوب"
+                                        id="ShippingNewAddress_ZipPostalCode" name="ShippingNewAddress.ZipPostalCode"
+                                        value="">
+                                    <span class="error-msg">*</span>
+                                </div>
+                                <span class="error-msg field-validation-valid"
+                                    data-valmsg-for="ShippingNewAddress.ZipPostalCode"
+                                    data-valmsg-replace="true"></span>
+                            </div>
+                        </div>
+                        <div class="row form-group mb-0">
+                            <div class="col-md-6 mb-3">
+                                <div class="input-group mb-0 align-items-center">
+                                    <input type="text" class="form-control" required="" placeholder="{{ 'address' | translate }} 1"
+                                        data-val="true" data-val-required="العنوان مطلوب"
+                                        id="ShippingNewAddress_Address1" name="ShippingNewAddress.Address1" value="">
+                                    <span class="error-msg">*</span>
+                                </div>
+                                <span class="error-msg field-validation-valid"
+                                    data-valmsg-for="ShippingNewAddress.Address1" data-valmsg-replace="true"></span>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="input-group mb-0 align-items-center">
+                                    <input type="text" class="form-control" placeholder="{{ 'address' | translate }} 2"
+                                        id="ShippingNewAddress_Address2" name="ShippingNewAddress.Address2" value="">
+                                </div>
+                                <span class="error-msg field-validation-valid"
+                                    data-valmsg-for="ShippingNewAddress.Address2" data-valmsg-replace="true"></span>
+                            </div>
+                        </div>
+
+                        <h4 class="mt-4">الموقع</h4>
+                        <p class="map-desc">يرجى تحديد الموقع بدقة ليتسهل الوصول اليك</p>
+
+                        <div class="inputs" style="display:flex;">
+                            <div id="ShippingAddressMap" style="height: 500px; width: 100%; position: relative;"
+                                class="leaflet-container leaflet-touch leaflet-fade-anim leaflet-grab leaflet-touch-drag leaflet-touch-zoom"
+                                tabindex="0">
+                                <div class="leaflet-pane leaflet-map-pane"
+                                    style="transform: translate3d(532px, 250px, 0px);">
+                                    <div class="leaflet-pane leaflet-tile-pane">
+                                        <div class="leaflet-layer " style="z-index: 1; opacity: 1;">
+                                            <div class="leaflet-tile-container leaflet-zoom-animated"
+                                                style="z-index: 18; transform: translate3d(0px, 0px, 0px) scale(1);">
+                                                <img alt="" role="presentation"
+                                                    src="https://b.tile.openstreetmap.org/6/40/27.png"
+                                                    class="leaflet-tile leaflet-tile-loaded"
+                                                    style="width: 256px; height: 256px; transform: translate3d(-70px, -118px, 0px); opacity: 1;"><img
+                                                    alt="" role="presentation"
+                                                    src="https://a.tile.openstreetmap.org/6/40/26.png"
+                                                    class="leaflet-tile leaflet-tile-loaded"
+                                                    style="width: 256px; height: 256px; transform: translate3d(-70px, -374px, 0px); opacity: 1;"><img
+                                                    alt="" role="presentation"
+                                                    src="https://a.tile.openstreetmap.org/6/39/27.png"
+                                                    class="leaflet-tile leaflet-tile-loaded"
+                                                    style="width: 256px; height: 256px; transform: translate3d(-326px, -118px, 0px); opacity: 1;"><img
+                                                    alt="" role="presentation"
+                                                    src="https://c.tile.openstreetmap.org/6/41/27.png"
+                                                    class="leaflet-tile leaflet-tile-loaded"
+                                                    style="width: 256px; height: 256px; transform: translate3d(186px, -118px, 0px); opacity: 1;"><img
+                                                    alt="" role="presentation"
+                                                    src="https://c.tile.openstreetmap.org/6/40/28.png"
+                                                    class="leaflet-tile leaflet-tile-loaded"
+                                                    style="width: 256px; height: 256px; transform: translate3d(-70px, 138px, 0px); opacity: 1;"><img
+                                                    alt="" role="presentation"
+                                                    src="https://c.tile.openstreetmap.org/6/39/26.png"
+                                                    class="leaflet-tile leaflet-tile-loaded"
+                                                    style="width: 256px; height: 256px; transform: translate3d(-326px, -374px, 0px); opacity: 1;"><img
+                                                    alt="" role="presentation"
+                                                    src="https://b.tile.openstreetmap.org/6/41/26.png"
+                                                    class="leaflet-tile leaflet-tile-loaded"
+                                                    style="width: 256px; height: 256px; transform: translate3d(186px, -374px, 0px); opacity: 1;"><img
+                                                    alt="" role="presentation"
+                                                    src="https://b.tile.openstreetmap.org/6/39/28.png"
+                                                    class="leaflet-tile leaflet-tile-loaded"
+                                                    style="width: 256px; height: 256px; transform: translate3d(-326px, 138px, 0px); opacity: 1;"><img
+                                                    alt="" role="presentation"
+                                                    src="https://a.tile.openstreetmap.org/6/41/28.png"
+                                                    class="leaflet-tile leaflet-tile-loaded"
+                                                    style="width: 256px; height: 256px; transform: translate3d(186px, 138px, 0px); opacity: 1;"><img
+                                                    alt="" role="presentation"
+                                                    src="https://c.tile.openstreetmap.org/6/38/27.png"
+                                                    class="leaflet-tile leaflet-tile-loaded"
+                                                    style="width: 256px; height: 256px; transform: translate3d(-582px, -118px, 0px); opacity: 1;"><img
+                                                    alt="" role="presentation"
+                                                    src="https://a.tile.openstreetmap.org/6/42/27.png"
+                                                    class="leaflet-tile leaflet-tile-loaded"
+                                                    style="width: 256px; height: 256px; transform: translate3d(442px, -118px, 0px); opacity: 1;"><img
+                                                    alt="" role="presentation"
+                                                    src="https://b.tile.openstreetmap.org/6/38/26.png"
+                                                    class="leaflet-tile leaflet-tile-loaded"
+                                                    style="width: 256px; height: 256px; transform: translate3d(-582px, -374px, 0px); opacity: 1;"><img
+                                                    alt="" role="presentation"
+                                                    src="https://c.tile.openstreetmap.org/6/42/26.png"
+                                                    class="leaflet-tile leaflet-tile-loaded"
+                                                    style="width: 256px; height: 256px; transform: translate3d(442px, -374px, 0px); opacity: 1;"><img
+                                                    alt="" role="presentation"
+                                                    src="https://a.tile.openstreetmap.org/6/38/28.png"
+                                                    class="leaflet-tile leaflet-tile-loaded"
+                                                    style="width: 256px; height: 256px; transform: translate3d(-582px, 138px, 0px); opacity: 1;"><img
+                                                    alt="" role="presentation"
+                                                    src="https://b.tile.openstreetmap.org/6/42/28.png"
+                                                    class="leaflet-tile leaflet-tile-loaded"
+                                                    style="width: 256px; height: 256px; transform: translate3d(442px, 138px, 0px); opacity: 1;">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="leaflet-pane leaflet-shadow-pane"></div>
+                                    <div class="leaflet-pane leaflet-overlay-pane"></div>
+                                    <div class="leaflet-pane leaflet-marker-pane"></div>
+                                    <div class="leaflet-pane leaflet-tooltip-pane"></div>
+                                    <div class="leaflet-pane leaflet-popup-pane"></div>
+                                    <div class="leaflet-proxy leaflet-zoom-animated"
+                                        style="transform: translate3d(10310px, 7030px, 0px) scale(32);">
+                                    </div>
+                                </div>
+                                <div class="leaflet-control-container">
+                                    <div class="leaflet-top leaflet-left">
+                                        <div class="leaflet-control-zoom leaflet-bar leaflet-control">
+                                            <a class="leaflet-control-zoom-in" href="#" title="Zoom in" role="button"
+                                                aria-label="Zoom in">+</a><a class="leaflet-control-zoom-out" href="#"
+                                                title="Zoom out" role="button" aria-label="Zoom out">−</a>
+                                        </div>
+                                        <div class="geocoder-control leaflet-control"><input
+                                                class="geocoder-control-input leaflet-bar" title="Location Search">
+                                            <div class="geocoder-control-suggestions leaflet-bar">
+                                                <div class=""></div>
+                                                <div class=""></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="leaflet-top leaflet-right"></div>
+                                    <div class="leaflet-bottom leaflet-left"></div>
+                                    <div class="leaflet-bottom leaflet-right">
+                                        <div class="leaflet-control-attribution leaflet-control esri-truncated-attribution:hover esri-truncated-attribution"
+                                            style="max-width: 1009px;"><a href="http://leafletjs.com"
+                                                title="A JS library for interactive maps">Leaflet</a>
+                                            | Powered by <a href="https://www.esri.com">Esri</a> | © <a
+                                                href="#">Birdeye</a> contributors</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <ul class="nav-btns list-inline d-flex justify-content-center align-items-center mb-0">
+                    <li><button type="button" class="shippingNewAddressBtns btn next-step">{{ 'save' | translate }}</button></li>
+                    <li><button type="button" class="shippingNewAddressBtns btn mx-2"
+                            style="background-color: rgb(112, 112, 112);" (click)="showAddAddress = false">{{ 'back' | translate }}</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

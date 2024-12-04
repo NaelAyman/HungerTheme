@@ -1,0 +1,69 @@
+<div class="item-box d-flex align-items-start justify-content-between mb-3">
+    <div class="item-img d-flex align-items-center justify-content-center">
+        <img class="img-fluid" src="images/item1.png" alt="ايفون 14 بلس 256 جيجا, لون اسود">
+    </div>
+    <div class="item-details">
+        <div class="d-flex align-items-center justify-content-between w-100 mb-1">
+            <h4 class="title mb-0">ايفون 14 بلس 256 جيجا, لون اسود</h4>
+            <p class="price mb-0">5000 {{ 'SAR' | translate }}</p>
+        </div>
+        <div class="d-flex align-items-center">
+            <p class="price mb-0 mr-2">5000 {{ 'SAR' | translate }}</p>
+            <p class="status mb-0 pl-2">{{ 'available' | translate }}</p>
+        </div>
+        <div class="d-flex flex-wrap justify-content-between align-items-center">
+            <div class="d-flex align-items-center mt-2 mt-lg-3">
+                <div class="select-container mt-2">
+                    <select class="form-control">
+                        <option value="">{{ 'color' | translate }}</option>
+                    </select>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="5" viewBox="0 0 12.728 7.778">
+                        <path d="M12,13.172l4.95-4.95,1.414,1.414L12,16,5.636,9.636,7.05,8.222Z"
+                            transform="translate(-5.636 -8.222)" />
+                    </svg>
+                </div>
+                <div class="select-container mx-2 mt-2">
+                    <select class="form-control">
+                        <option value="">{{ 'capacity' | translate }}</option>
+                    </select>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="5" viewBox="0 0 12.728 7.778">
+                        <path d="M12,13.172l4.95-4.95,1.414,1.414L12,16,5.636,9.636,7.05,8.222Z"
+                            transform="translate(-5.636 -8.222)" />
+                    </svg>
+                </div>
+                <div class="item-quantity d-flex align-items-center mt-2">
+                    <a href="javascript:void(0)" onclick="itemQtyEditClick($(this))"
+                        class="d-flex align-items-center justify-content-center">+</a>
+                    <input readonly type="text" class="qty border-0" value="1" />
+                    <a href="javascript:void(0)" onclick="itemQtyEditClick($(this))"
+                        class="d-flex align-items-center justify-content-center">-</a>
+                </div>
+            </div>
+            <div class="d-flex align-items-center mt-2 mt-lg-3">
+                <a href="" class="d-flex align-items-center add-to-favourites pr-2" *ngIf="pageType == 'cart'">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 20 18.5">
+                        <path
+                            d="M16.5,3C19.538,3,22,5.5,22,9c0,7-7.5,11-10,12.5C9.5,20,2,16,2,9A5.675,5.675,0,0,1,7.5,3,6.617,6.617,0,0,1,12,5,6.617,6.617,0,0,1,16.5,3Z"
+                            transform="translate(-2 -3)" />
+                    </svg>
+                    <span class="pl-1">{{ 'addToWishlist' | translate }}</span>
+                </a>
+                <a _ngcontent-ng-c2607103716="" href="" class="d-flex align-items-center add-to-cart pr-2" *ngIf="pageType == 'wishlist'"><svg
+                        _ngcontent-ng-c2607103716="" xmlns="http://www.w3.org/2000/svg" width="18" height="15"
+                        viewBox="0 0 10.962 9.626">
+                        <path _ngcontent-ng-c2607103716=""
+                            d="M9.326,3.438l1.76,3.049h1.876v1.1h-.64l-.415,4.979a.548.548,0,0,1-.546.5H3.6a.548.548,0,0,1-.546-.5L2.639,7.583H2v-1.1H3.876L5.636,3.438l.949.548-1.444,2.5H9.82l-1.443-2.5Zm-1.3,5.241h-1.1v2.192h1.1Zm-2.192,0h-1.1v2.192h1.1Zm4.385,0h-1.1v2.192h1.1Z"
+                            transform="translate(-2 -3.438)" fill="#575757"></path>
+                    </svg><span _ngcontent-ng-c2607103716="" class="pl-1">{{ 'addToCart' | translate }}</span></a>
+                <a href="" class="d-flex align-items-center item-delete pl-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 20 20">
+                        <path
+                            d="M7,6V3A1,1,0,0,1,8,2h8a1,1,0,0,1,1,1V6h5V8H20V21a1,1,0,0,1-1,1H5a1,1,0,0,1-1-1V8H2V6ZM9,4V6h6V4Z"
+                            transform="translate(-2 -2)" />
+                    </svg>
+                    <span class="pl-1">{{ 'delete' | translate }}</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
