@@ -16,58 +16,123 @@ ul {
 a {
     text-decoration: none;
 }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
 
 // Radio Button
 
 /* The label-container */
-.label-container {
-    position: relative;
-    padding: 8px 0;
-    padding-inline-start: 35px;
-    cursor: pointer;
-    font-size: 14px;
-    font-weight: 500;
-    color: $headTitle;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    &:not(:last-of-type) {
-        margin-bottom: 12px;
-    }
-    .checkmark {
-        position: absolute;
-        top: 50%;
-        right: 0;
-        height: 24px;
-        width: 24px;
-        background-color: $white;
-        border-radius: 50%;
-        border: 1px solid $radioButtonBorder;
-        transform: translateY(-50%);
-        &:after {
-            content: "";
+.n-radio {
+    .label-container {
+        position: relative;
+        padding: 8px 0;
+        padding-inline-start: 35px;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: 500;
+        color: $headTitle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        &:not(:last-of-type) {
+            margin-bottom: 12px;
+        }
+        .checkmark {
             position: absolute;
-            top: 4px;
-            left: 1px;
+            top: 50%;
             right: 0;
-            margin: auto;
-            width: 14px;
-            height: 14px;
+            height: 24px;
+            width: 24px;
+            background-color: $white;
             border-radius: 50%;
-            background: $primaryColor;
-            display: none;
+            border: 1px solid $radioButtonBorder;
+            transform: translateY(-50%);
+            &:after {
+                content: "";
+                position: absolute;
+                top: 4px;
+                left: 1px;
+                right: 0;
+                margin: auto;
+                width: 14px;
+                height: 14px;
+                border-radius: 50%;
+                background: $primaryColor;
+                display: none;
+            }
+        }
+        input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            &:checked {
+                ~ .checkmark {
+                    border: 1px solid $primaryColor;
+                    &:after {
+                        display: block;
+                    }
+                }
+            }
         }
     }
-    input {
-        position: absolute;
-        opacity: 0;
+}
+
+// Checkbox
+.n-check {
+    .label-container {
+        position: relative;
+        padding: 8px 0;
+        padding-inline-start: 35px;
         cursor: pointer;
-        &:checked {
-            ~ .checkmark {
-                border: 1px solid $primaryColor;
-                &:after {
-                    display: block;
+        font-size: 14px;
+        font-weight: 500;
+        color: $headTitle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        &:not(:last-of-type) {
+            margin-bottom: 12px;
+        }
+        .checkmark {
+            position: absolute;
+            top: 50%;
+            right: 0;
+            height: 20px;
+            width: 20px;
+            background-color: $white;
+            border-radius: 5px;
+            border: 2px solid $subTitle;
+            transform: translateY(-50%);
+            &:after {
+                content: "";
+                position: absolute;
+                left: 6px;
+                top: 2px;
+                width: 5px;
+                height: 10px;
+                border: 2px solid $primaryColor;
+                border-width: 0 3px 3px 0;
+                -webkit-transform: rotate(45deg);
+                -ms-transform: rotate(45deg);
+                transform: rotate(45deg);
+                display: none;
+            }
+        }
+        input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            &:checked {
+                ~ .checkmark {
+                    border: 2px solid $primaryColor;
+                    &:after {
+                        display: block;
+                    }
                 }
             }
         }
@@ -105,6 +170,193 @@ a {
     }
 }
 
+// Owl Carousel
+.owl-carousel {
+    direction: ltr;
+}
+
+// Adv Slider
+.adv-carousel {
+    .owl-item {
+        position: relative;
+        img {
+            height: 340px;
+            object-fit: cover;
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: #00000026;
+            top: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+    }
+    .owl-nav {
+        margin: 0;
+        position: absolute;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        top: 50%;
+        transform: translateY(-50%);
+        .owl-prev,
+        .owl-next {
+            width: 45px;
+            height: 45px;
+            background-color: $white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 35px;
+            i {
+                color: #2a353d;
+                font-size: 20px;
+                opacity: 0.3;
+            }
+            &:hover {
+                background-color: $white;
+            }
+        }
+    }
+}
+
+// Categories Browsing
+.categories-carousel {
+    .owl-stage {
+        height: 87px;
+        overflow: hidden;
+        display: flex;
+    }
+    .owl-item {
+        width: 150px !important;
+        height: 85px;
+        margin-inline-end: 16px;
+    }
+}
+
+// Product Slider
+.products-carousel {
+    position: relative;
+    .owl-item {
+        width: 270px !important;
+        margin-inline-end: 16px;
+    }
+    .owl-nav {
+        margin: 0;
+        position: relative;
+        bottom: -50px;
+        display: flex;
+        .owl-prev,
+        .owl-next {
+            width: 25px;
+            height: 25px;
+            background-color: transparent;
+            border-radius: 50%;
+            border: 2px solid $subTitle;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            margin-inline-end: 16px;
+            i {
+                color: $subTitle;
+            }
+            &:hover {
+                background-color: transparent;
+            }
+        }
+    }
+}
+
+// Clients Slider
+.categories-carousel,
+.clients-carousel {
+    .owl-nav {
+        margin: 0;
+        position: absolute;
+        top: -50px;
+        left: 0;
+        display: flex;
+        .owl-prev,
+        .owl-next {
+            width: 25px;
+            height: 25px;
+            background-color: transparent;
+            border-radius: 50%;
+            border: 2px solid $subTitle;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            margin-inline-end: 16px;
+            i {
+                color: $subTitle;
+            }
+            &:hover {
+                background-color: transparent;
+            }
+        }
+    }
+}
+
+.favourite-items {
+    .products-carousel {
+        .owl-nav {
+            bottom: auto;
+            top: 0;
+        }
+    }
+}
+
 // Css for second language (en)
 html:lang(en) {
+}
+
+@media (max-width: 1024px) {
+    .adv-carousel {
+        .owl-item {
+            img {
+                height: auto;
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .adv-carousel {
+        .owl-nav {
+            .owl-prev,
+            .owl-next {
+                width: 24px;
+                height: 24px;
+                margin: 0 15px;
+                i {
+                    font-size: 10px;
+                }
+            }
+        }
+    }
+    .categories-carousel {
+        .owl-item {
+            width: 115px !important;
+        }
+    }
+    .products-carousel {
+        .owl-item {
+            width: 280px !important;
+        }
+    }
+}
+@media (max-width: 375px) {
+    .products-carousel {
+        .owl-nav {
+            bottom: 230px;
+        }
+    }
 }

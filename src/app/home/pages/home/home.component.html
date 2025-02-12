@@ -1,5 +1,453 @@
-<div class="container">
-    home content here
+<div class="home-content">
+    <!-- Home Top Content -->
+    <div class="top-content">
+        <div class="main-img">
+            <img src="assets/images/main-img.svg" alt="">
+        </div>
+        <div class="restaurant-info">
+            <div class="top-info">
+                <div class="restaurant-rate">
+                    <i class="fas fa-star"></i>
+                    4.9
+                    <span class="reviews">(299)</span>
+                </div>
+                <div class="restaurant-open">مفتوح الان</div>
+            </div>
+            <div class="bottom-info">
+                <div class="restaurant-special">
+                    <div class="restaurant-title d-flex align-items-center">
+                        <img src="assets/images/logo-with-bg.svg" alt="">
+                        <div class="special-txt w-100">
+                            <div class="restaurant-name d-flex justify-content-between">
+                                مطاعم الرومانسية
+                                <div class="distance d-flex align-items-center">
+                                    <img src="assets/images/location-icon.svg" alt="" class="m-0">
+                                    32K
+                                </div>
+                            </div>
+                            <div class="restaurant-food">
+                                مشويات - عربي - ملحمة - سعودي
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <ul class="restaurant-delivery">
+                    <li>
+                        الحد الادنى للطلب
+                        <span>
+                            35 ر.س
+                        </span>
+                    </li>
+                    <li>
+                        وقت التنفيذ
+                        <span>
+                            الان
+                        </span>
+                    </li>
+                    <li>
+                        مدة التوصيل
+                        <span>
+                            30 - 45 دقيقة
+                        </span>
+                    </li>
+                    <li>
+                        رسوم التوصيل
+                        <span>
+                            17 ر.س
+                        </span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
 
-    {{'welcome' | translate}}
+    <!-- Adv Slider -->
+    <div class="adv-slider">
+        <div class="container">
+            <owl-carousel-o [options]="advSlider" class="adv-carousel">
+                <ng-template carouselSlide>
+                    <img src="assets/images/adv-slider.png" alt="">
+                </ng-template>
+                <ng-template carouselSlide>
+                    <img src="assets/images/adv-slider.png" alt="">
+                </ng-template>
+                <ng-template carouselSlide>
+                    <img src="assets/images/adv-slider.png" alt="">
+                </ng-template>
+            </owl-carousel-o>
+        </div>
+
+    </div>
+
+    <!-- Categories Browsing -->
+    <div class="categories-browsing">
+        <div class="container">
+            <div class="our-products-content">
+                <h2 class="head-title">تصفح بحسب الفئات</h2>
+
+                <div class="categories-slider products-slider">
+                    <owl-carousel-o [options]="categoriestSlider" class="categories-carousel">
+                        <ng-container *ngFor="let category of categories">
+                            <ng-template carouselSlide>
+                                <div class="category" [class.active]="selectedCategory === category"
+                                    (click)="onCategorySelect(category)">
+                                    <img src="assets/images/{{category.image}}.svg" alt="">
+                                    {{ category.name }}
+                                </div>
+                            </ng-template>
+                        </ng-container>
+                    </owl-carousel-o>
+
+                    <div class="category-content" *ngIf="selectedCategory">
+                        <ul class="tabs-content">
+                            <li *ngFor="let item of selectedCategory.items" class="product-item d-flex align-items-center">
+                                <div class="img">
+                                    <img src="assets/images/{{ item.image }}.svg" alt="">
+                                </div>
+                                <div class="item-info">
+                                    <div class="product-name">
+                                        {{ item.title }}
+                                        <div class="product-cost">
+                                            {{ item.cost }} ر.س
+                                        </div>
+                                    </div>
+                                    <div class="product-desc">
+                                        {{ item.description }}
+                                    </div>
+                                    <ul class="food-info">
+                                        <li>
+                                            <img src="assets/images/special.svg" alt="">
+                                            قابل للتخصيص
+                                        </li>
+                                        <li>
+                                            <img src="assets/images/calories.svg" alt="">
+                                            2000 سعره حرارية
+                                        </li>
+                                    </ul>
+                                    <div class="add-to-cart" routerLink="/product/details/1">
+                                        <i class="fas fa-plus"></i>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <div class="btns w-100">
+                                <a routerLink="" class="btn btn-secondary">عرض المزيد</a>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Statistics -->
+    <div class="statistics-number">
+        <div class="container">
+            <h2 class="head-title">احصائيات وارقام</h2>
+            <div class="statistics">
+                <div class="item">
+                    <div class="icon">
+                        <img src="assets/images/orders.svg" alt="">
+                    </div>
+                    <div class="number">
+                        22,470
+                        <span class="static">
+                            عدد الطلبات
+                        </span>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="icon">
+                        <img src="assets/images/branches.svg" alt="">
+                    </div>
+                    <div class="number">
+                        22,470
+                        <span class="static">
+                            فرع في المملكة
+                        </span>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="icon">
+                        <img src="assets/images/delivery.svg" alt="">
+                    </div>
+                    <div class="number">
+                        13,270
+                        <span class="static">
+                            عملية توصيل
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Our Products -->
+    <div class="our-products">
+        <div class="container">
+            <div class="our-products-content d-flex align-items-center">
+                <div class="products-head">
+                    منتجاتنا
+                    <div class="desc">
+                        إطلب واستمتع أشهى الأطباق مباشرة
+                    </div>
+                </div>
+                <div class="products-slider">
+                    <owl-carousel-o [options]="productSlider" class="products-carousel">
+                        <ng-template carouselSlide>
+                            <div class="product-item">
+                                <div class="img">
+                                    <img src="assets/images/product-slider-img.svg" alt="">
+                                </div>
+                                <div class="product-name">
+                                    دجاج زربيان
+                                    <div class="product-cost">
+                                        38 ر.س
+                                    </div>
+                                </div>
+                                <div class="product-desc">
+                                    دجاج طني طازج مطهو مع الارز
+                                </div>
+                                <ul class="food-info">
+                                    <li>
+                                        <img src="assets/images/special.svg" alt="">
+                                        قابل للتخصيص
+                                    </li>
+                                    <li>
+                                        <img src="assets/images/calories.svg" alt="">
+                                        2000 سعره حرارية
+                                    </li>
+                                </ul>
+                                <div class="add-to-cart" routerLink="/product/details/1">
+                                    <i class="fas fa-plus"></i>
+                                </div>
+                            </div>
+                        </ng-template>
+                        <ng-template carouselSlide>
+                            <div class="product-item">
+                                <div class="img">
+                                    <img src="assets/images/product-slider-img.svg" alt="">
+                                </div>
+                                <div class="product-name">
+                                    دجاج زربيان
+                                    <div class="product-cost">
+                                        38
+                                        <span class="curruncy">ر.س</span>
+                                    </div>
+                                </div>
+                                <div class="product-desc">
+                                    دجاج طني طازج مطهو مع الارز
+                                </div>
+                                <ul class="food-info">
+                                    <li>
+                                        <img src="assets/images/special.svg" alt="">
+                                        قابل للتخصيص
+                                    </li>
+                                    <li>
+                                        <img src="assets/images/calories.svg" alt="">
+                                        2000 سعره حرارية
+                                    </li>
+                                </ul>
+                                <div class="add-to-cart" routerLink="/product/details/1">
+                                    <i class="fas fa-plus"></i>
+                                </div>
+                            </div>
+                        </ng-template>
+                        <ng-template carouselSlide>
+                            <div class="product-item">
+                                <div class="img">
+                                    <img src="assets/images/product-slider-img.svg" alt="">
+                                </div>
+                                <div class="product-name">
+                                    دجاج زربيان
+                                    <div class="product-cost">
+                                        38 ر.س
+                                    </div>
+                                </div>
+                                <div class="product-desc">
+                                    دجاج طني طازج مطهو مع الارز
+                                </div>
+                                <ul class="food-info">
+                                    <li>
+                                        <img src="assets/images/special.svg" alt="">
+                                        قابل للتخصيص
+                                    </li>
+                                    <li>
+                                        <img src="assets/images/calories.svg" alt="">
+                                        2000 سعره حرارية
+                                    </li>
+                                </ul>
+                                <div class="add-to-cart" routerLink="/product/details/1">
+                                    <i class="fas fa-plus"></i>
+                                </div>
+                            </div>
+                        </ng-template>
+                        <ng-template carouselSlide>
+                            <div class="product-item">
+                                <div class="img">
+                                    <img src="assets/images/product-slider-img.svg" alt="">
+                                </div>
+                                <div class="product-name">
+                                    دجاج زربيان
+                                    <div class="product-cost">
+                                        38
+                                        <span class="curruncy">ر.س</span>
+                                    </div>
+                                </div>
+                                <div class="product-desc">
+                                    دجاج طني طازج مطهو مع الارز
+                                </div>
+                                <ul class="food-info">
+                                    <li>
+                                        <img src="assets/images/special.svg" alt="">
+                                        قابل للتخصيص
+                                    </li>
+                                    <li>
+                                        <img src="assets/images/calories.svg" alt="">
+                                        2000 سعره حرارية
+                                    </li>
+                                </ul>
+                                <div class="add-to-cart" routerLink="/product/details/1">
+                                    <i class="fas fa-plus"></i>
+                                </div>
+                            </div>
+                        </ng-template>
+                        <ng-template carouselSlide>
+                            <div class="product-item">
+                                <div class="img">
+                                    <img src="assets/images/product-slider-img.svg" alt="">
+                                </div>
+                                <div class="product-name">
+                                    دجاج زربيان
+                                    <div class="product-cost">
+                                        38 ر.س
+                                    </div>
+                                </div>
+                                <div class="product-desc">
+                                    دجاج طني طازج مطهو مع الارز
+                                </div>
+                                <ul class="food-info">
+                                    <li>
+                                        <img src="assets/images/special.svg" alt="">
+                                        قابل للتخصيص
+                                    </li>
+                                    <li>
+                                        <img src="assets/images/calories.svg" alt="">
+                                        2000 سعره حرارية
+                                    </li>
+                                </ul>
+                                <div class="add-to-cart" routerLink="/product/details/1">
+                                    <i class="fas fa-plus"></i>
+                                </div>
+                            </div>
+                        </ng-template>
+                    </owl-carousel-o>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Clients Comments -->
+    <div class="clients-comments">
+        <div class="container">
+            <div class="head-title">اراء عملائنا</div>
+            <div class="clients-slider">
+                <owl-carousel-o [options]="clientstSlider" class="clients-carousel">
+                    <ng-template carouselSlide>
+                        <div class="review">
+                            <div class="review-title">
+                                <div class="username">
+                                    <div class="img">
+                                        <img src="assets/images/username.jpg" alt="">
+                                    </div>
+                                    نائل أيمن
+                                </div>
+                                <div class="rate">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                            <p class="review-content">
+                                خدمة التوصيل كانت سريعة وفعّالة، ووصل الطعام في الوقت المحدد وبجودة ممتازة. أما بالنسبة
+                                للأسعار، فهي معقولة ومناسبة مقارنة بجودة الطعام والخدمة. تجربة رائعة بالتأكيد!
+                            </p>
+                        </div>
+                    </ng-template>
+                    <ng-template carouselSlide>
+                        <div class="review">
+                            <div class="review-title">
+                                <div class="username">
+                                    <div class="img">
+                                        <img src="assets/images/username.jpg" alt="">
+                                    </div>
+                                    نائل أيمن
+                                </div>
+                                <div class="rate">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                            <p class="review-content">
+                                خدمة التوصيل كانت سريعة وفعّالة، ووصل الطعام في الوقت المحدد وبجودة ممتازة. أما بالنسبة
+                                للأسعار، فهي معقولة ومناسبة مقارنة بجودة الطعام والخدمة. تجربة رائعة بالتأكيد!
+                            </p>
+                        </div>
+                    </ng-template>
+                    <ng-template carouselSlide>
+                        <div class="review">
+                            <div class="review-title">
+                                <div class="username">
+                                    <div class="img">
+                                        <img src="assets/images/username.jpg" alt="">
+                                    </div>
+                                    نائل أيمن
+                                </div>
+                                <div class="rate">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                            <p class="review-content">
+                                خدمة التوصيل كانت سريعة وفعّالة، ووصل الطعام في الوقت المحدد وبجودة ممتازة. أما بالنسبة
+                                للأسعار، فهي معقولة ومناسبة مقارنة بجودة الطعام والخدمة. تجربة رائعة بالتأكيد!
+                            </p>
+                        </div>
+                    </ng-template>
+                    <ng-template carouselSlide>
+                        <div class="review">
+                            <div class="review-title">
+                                <div class="username">
+                                    <div class="img">
+                                        <img src="assets/images/username.jpg" alt="">
+                                    </div>
+                                    نائل أيمن
+                                </div>
+                                <div class="rate">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                            <p class="review-content">
+                                خدمة التوصيل كانت سريعة وفعّالة، ووصل الطعام في الوقت المحدد وبجودة ممتازة. أما بالنسبة
+                                للأسعار، فهي معقولة ومناسبة مقارنة بجودة الطعام والخدمة. تجربة رائعة بالتأكيد!
+                            </p>
+                        </div>
+                    </ng-template>
+                </owl-carousel-o>
+            </div>
+        </div>
+    </div>
 </div>

@@ -7,17 +7,27 @@ import { SharedModule } from './shared/shared.module';
 import { HTTP_INTERCEPTORS, provideHttpClient, withFetch } from '@angular/common/http';
 import { AuthInterceptor } from './auth/auth-interceptor.service';
 
+import { provideAnimations } from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+
+import { CarouselModule } from 'ngx-owl-carousel-o';
+
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    SharedModule
+    SharedModule,
+    BrowserAnimationsModule,
+    CarouselModule
   ],
   providers: [
     provideClientHydration(),
+    provideAnimations(),
     provideHttpClient(withFetch()),
     {
       provide: HTTP_INTERCEPTORS,

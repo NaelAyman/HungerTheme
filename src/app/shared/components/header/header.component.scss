@@ -1,4 +1,4 @@
-@import '../../../../assets/variables.scss';
+@import '../../../../assets/_variables.scss';
 
 header {
     position: fixed;
@@ -382,6 +382,7 @@ header {
 
 @media(max-width: 991px) {
     header {
+        transition: all 0.3s ease-in-out;
         .header {
             background-color: transparent;
             border: 0;
@@ -538,6 +539,9 @@ header {
             &.open-sidenav {
                 right: 0;
             }
+        }
+        &.scrolled {
+            background-color: $white;
         }
     }
 }

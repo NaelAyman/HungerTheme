@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
+import { Component, HostListener, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
@@ -15,11 +15,21 @@ export class HeaderComponent implements OnInit {
 
   searchBar: boolean = false;
   sideNav: boolean = false;
+  isScrolled = false;
 
   constructor(private router: Router, private route: ActivatedRoute, @Inject(PLATFORM_ID) private platformId: Object, private translationService: TranslationService) {
     this.translationService.getCurrentLanguage().subscribe(language => {
       this.currentLanguage = language;
     });
+  }
+
+  @HostListener('window:scroll', ['$event'])
+  onWindowScroll() {
+    if (window.scrollY > 50) { // إذا كان التمرير أكثر من 50px
+      this.isScrolled = true; // أضف الـ class
+    } else {
+      this.isScrolled = false; // إزالة الـ class
+    }
   }
 
   ngOnInit(): void {

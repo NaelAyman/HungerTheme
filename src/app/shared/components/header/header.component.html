@@ -1,5 +1,5 @@
 <!-- Main Desktop Header -->
-<header>
+<header [class.scrolled]="isScrolled">
     <div class="header">
         <div class="container">
             <div class="header-content d-flex align-items-center justify-content-between">
@@ -156,7 +156,7 @@
                                 <i class="fas fa-chevron-down"></i>
                                 <img src="assets/images/menu-arrow.svg" alt="">
                             </div>
-                            <div class="dropdown-content">
+                            <div class="dropdown-content n-radio">
                                 <label class="label-container d-block">
                                     <input type="radio" checked="checked" name="radio">
                                     <span class="checkmark"></span>

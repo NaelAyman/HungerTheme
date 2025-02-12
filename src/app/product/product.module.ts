@@ -15,6 +15,9 @@ import { CheckoutConfirmComponent } from './components/checkout/checkout-confirm
 import { CheckoutDetailsComponent } from './components/checkout/checkout-details/checkout-details.component';
 import { AuthGuard } from '../auth/auth.guard';
 
+
+import { CarouselModule } from 'ngx-owl-carousel-o';
+
 const routes: Routes = [
   { path: 'category/:id', component: CategoryComponent },
   { path: 'details/:id', component: ProductDetailsComponent },
@@ -40,7 +43,8 @@ const routes: Routes = [
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
-    SharedModule
+    SharedModule,
+    CarouselModule
   ],
   exports: [
     ProductCardComponent // Export ProductCardComponent for use in other modules
