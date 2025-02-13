@@ -129,6 +129,7 @@ header {
                                 line-height: 20px;
                                 img {
                                     margin-inline-start: 8px;
+                                    transform: rotateX(180deg);
                                 }
                             }
                         }
@@ -185,7 +186,7 @@ header {
                         }
                         &:hover {
                             .dropdown-content {
-                                top: 64px;
+                                top: 69px;
                                 visibility: visible;
                                 opacity: 1;
                             }
@@ -366,7 +367,7 @@ header {
 }
 
 // Media Query
-@media(max-width: 1024px) {
+@media(max-width: 1200px) {
     header {
         .header {
             .header-content {

@@ -244,8 +244,9 @@ input::-webkit-inner-spin-button {
 .products-carousel {
     position: relative;
     .owl-item {
+        float: right !important;
         width: 270px !important;
-        margin-inline-end: 16px;
+        margin-inline-start: 18px;
     }
     .owl-nav {
         margin: 0;
@@ -308,17 +309,19 @@ input::-webkit-inner-spin-button {
 .favourite-items {
     .products-carousel {
         .owl-nav {
+            position: absolute;
             bottom: auto;
-            top: 0;
+            top: -40px;
         }
     }
 }
 
 // Css for second language (en)
-html:lang(en) {
-}
+// html:lang(en) {
 
-@media (max-width: 1024px) {
+// }
+
+@media (max-width: 1200px) {
     .adv-carousel {
         .owl-item {
             img {
@@ -326,9 +329,21 @@ html:lang(en) {
             }
         }
     }
+    .products-carousel {
+        .owl-item {
+            margin-inline-start: 22px;
+        }
+    }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 991px) {
+    .products-carousel {
+        .owl-item {
+            margin-inline-start: 20px;
+        }
+    }
+}
+@media (max-width: 768px) {
     .adv-carousel {
         .owl-nav {
             .owl-prev,
@@ -349,7 +364,7 @@ html:lang(en) {
     }
     .products-carousel {
         .owl-item {
-            width: 280px !important;
+            width: 180px !important;
         }
     }
 }

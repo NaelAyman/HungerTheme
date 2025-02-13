@@ -75,6 +75,39 @@
                     <img src="assets/images/adv-slider.png" alt="">
                 </ng-template>
             </owl-carousel-o>
+
+            <!-- Slider main container -->
+            <!-- <div class="swiper"> -->
+                <!-- Additional required wrapper -->
+                <!-- <div class="swiper-wrapper"> -->
+                    <!-- Slides -->
+                    <!-- <div class="swiper-slide">Slide 1</div>
+                    <div class="swiper-slide">Slide 2</div>
+                    <div class="swiper-slide">Slide 3</div>
+                    ...
+                </div> -->
+                <!-- If we need pagination -->
+                <!-- <div class="swiper-pagination"></div> -->
+
+                <!-- If we need navigation buttons -->
+                <!-- <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div> -->
+
+                <!-- If we need scrollbar -->
+                <!-- <div class="swiper-scrollbar"></div> -->
+            <!-- </div> -->
+
+            <!-- <swiper-container class="adv-carousel" navigation="true">
+                <swiper-slide>
+                    <img src="assets/images/adv-slider.png" alt="">
+                </swiper-slide>
+                <swiper-slide>
+                    <img src="assets/images/adv-slider.png" alt="">
+                </swiper-slide>
+                <swiper-slide>
+                    <img src="assets/images/adv-slider.png" alt="">
+                </swiper-slide>
+            </swiper-container> -->
         </div>
 
     </div>
@@ -100,13 +133,14 @@
 
                     <div class="category-content" *ngIf="selectedCategory">
                         <ul class="tabs-content">
-                            <li *ngFor="let item of selectedCategory.items" class="product-item d-flex align-items-center">
+                            <li *ngFor="let item of selectedCategory.items"
+                                class="product-item d-flex align-items-center">
                                 <div class="img">
                                     <img src="assets/images/{{ item.image }}.svg" alt="">
                                 </div>
                                 <div class="item-info">
                                     <div class="product-name">
-                                        {{ item.title }}
+                                        <a routerLink="/product/details/1">{{ item.title }}</a>
                                         <div class="product-cost">
                                             {{ item.cost }} ر.س
                                         </div>
@@ -201,7 +235,7 @@
                                     <img src="assets/images/product-slider-img.svg" alt="">
                                 </div>
                                 <div class="product-name">
-                                    دجاج زربيان
+                                    <a routerLink="/product/details/1">دجاج زربيان</a>
                                     <div class="product-cost">
                                         38 ر.س
                                     </div>
@@ -230,7 +264,7 @@
                                     <img src="assets/images/product-slider-img.svg" alt="">
                                 </div>
                                 <div class="product-name">
-                                    دجاج زربيان
+                                    <a routerLink="/product/details/1">دجاج زربيان</a>
                                     <div class="product-cost">
                                         38
                                         <span class="curruncy">ر.س</span>
@@ -260,7 +294,7 @@
                                     <img src="assets/images/product-slider-img.svg" alt="">
                                 </div>
                                 <div class="product-name">
-                                    دجاج زربيان
+                                    <a routerLink="/product/details/1">دجاج زربيان</a>
                                     <div class="product-cost">
                                         38 ر.س
                                     </div>
@@ -289,7 +323,7 @@
                                     <img src="assets/images/product-slider-img.svg" alt="">
                                 </div>
                                 <div class="product-name">
-                                    دجاج زربيان
+                                    <a routerLink="/product/details/1">دجاج زربيان</a>
                                     <div class="product-cost">
                                         38
                                         <span class="curruncy">ر.س</span>
@@ -319,7 +353,7 @@
                                     <img src="assets/images/product-slider-img.svg" alt="">
                                 </div>
                                 <div class="product-name">
-                                    دجاج زربيان
+                                    <a routerLink="/product/details/1">دجاج زربيان</a>
                                     <div class="product-cost">
                                         38 ر.س
                                     </div>

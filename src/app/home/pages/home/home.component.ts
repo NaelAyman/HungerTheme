@@ -28,12 +28,13 @@ export class HomeComponent {
   }
   
   categoriestSlider: OwlOptions = {
-    loop: true,
+    rewind: true,
+    loop: false,
     mouseDrag: true,
     touchDrag: true,
     pullDrag: true,
     dots: false,
-    center: true,
+    center: false,
     URLhashListener:true,
     autoplayHoverPause:true,
     startPosition: 'URLHash',
@@ -57,7 +58,8 @@ export class HomeComponent {
   }
   
   productSlider: OwlOptions = {
-    loop: true,
+    rewind: true,
+    loop: false,
     mouseDrag: true,
     touchDrag: true,
     pullDrag: true,
@@ -82,7 +84,8 @@ export class HomeComponent {
   }
   
   clientstSlider: OwlOptions = {
-    loop: true,
+    rewind: true,
+    loop: false,
     mouseDrag: true,
     touchDrag: true,
     pullDrag: true,

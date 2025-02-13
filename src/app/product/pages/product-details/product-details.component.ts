@@ -28,6 +28,7 @@ export class ProductDetailsComponent {
     mouseDrag: true,
     touchDrag: true,
     pullDrag: true,
+    center: false,
     dots: false,
     navSpeed: 700,
     navText: ['<i class="fas fa-chevron-left"></i>', '<i class="fas fa-chevron-right"></i>'],

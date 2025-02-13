@@ -337,6 +337,9 @@
                         font-weight: 700;
                         color: $headTitle;
                         margin-bottom: 16px;
+                        a {
+                            color: $headTitle;
+                        }
                         .product-cost {
                             font-size: 20px;
                             color: $primaryColor;
@@ -624,7 +627,28 @@
                 height: 400px;
                 .products-carousel {
                     .product-item {
-                        width: 290px;
+                        width: 180px;
+                        .product-name {
+                            a {
+                                font-size: 14px;
+                            }
+                            .product-cost {
+                                font-size: 16px !important;
+                            }
+                        }
+                        .product-desc {
+                            font-size: 12px !important;
+                            text-overflow: ellipsis;
+                            white-space: nowrap;
+                            overflow: hidden;
+                        }
+                        .add-to-cart {
+                            width: 30px !important;
+                            height: 30px !important;
+                            bottom: 5px !important;
+                            left: 3px !important;
+                            font-size: 16px !important;
+                        }
                     }
                 }
             }
