@@ -12,17 +12,18 @@ import { RouterModule, Routes } from '@angular/router';
 import { OrderDetailsComponent } from './pages/order-details/order-details.component';
 import { SharedModule } from '../shared/shared.module';
 import { AuthGuard } from '../auth/auth.guard';
+import { SideMenuComponent } from './components/side-menu/side-menu.component';
 
 const routes: Routes = [
-  { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] },
-  { path: 'addresses', component: AddressListComponent, canActivate: [AuthGuard] },
-  { path: 'addresses/add', component: AddAddressComponent, canActivate: [AuthGuard] },
-  { path: 'orders', component: OrdersComponent, canActivate: [AuthGuard] },
-  { path: 'order/:id', component: OrderDetailsComponent, canActivate: [AuthGuard] },
-  { path: 'wallet', component: WalletComponent, canActivate: [AuthGuard] },
-  { path: 'change-password', component: ChangePasswordComponent, canActivate: [AuthGuard] },
-  { path: 'complaints', component: ComplaintListComponent, canActivate: [AuthGuard] },
-  { path: 'complaints/add', component: AddComplaintComponent, canActivate: [AuthGuard] }
+  { path: 'profile', component: ProfileComponent },
+  { path: 'addresses', component: AddressListComponent },
+  { path: 'addresses/add', component: AddAddressComponent },
+  { path: 'orders', component: OrdersComponent },
+  { path: 'order/:id', component: OrderDetailsComponent },
+  { path: 'wallet', component: WalletComponent },
+  { path: 'change-password', component: ChangePasswordComponent },
+  { path: 'complaints', component: ComplaintListComponent },
+  { path: 'complaints/add', component: AddComplaintComponent }
 ];
 
 @NgModule({
@@ -35,7 +36,8 @@ const routes: Routes = [
     ChangePasswordComponent,
     ComplaintListComponent,
     AddComplaintComponent,
-    OrderDetailsComponent
+    OrderDetailsComponent,
+    SideMenuComponent
   ],
   imports: [
     CommonModule,
