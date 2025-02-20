@@ -8,6 +8,9 @@ header {
     width: 100%;
     top: 0;
     z-index: 9;
+    &.scrolled {
+        border-bottom: 1px solid $offWhiteBg;
+    }
     .header {
         background-color: $white;
         border-bottom: 1px solid $headerBorder;

@@ -21,9 +21,9 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
 const routes: Routes = [
   { path: 'category/:id', component: CategoryComponent },
   { path: 'details/:id', component: ProductDetailsComponent },
-  { path: 'cart', component: ShoppingCartComponent, canActivate: [AuthGuard] },
-  { path: 'wishlist', component: WishlistComponent, canActivate: [AuthGuard] },
-  { path: 'checkout', component: CheckoutComponent, canActivate: [AuthGuard] }
+  { path: 'cart', component: ShoppingCartComponent },
+  { path: 'wishlist', component: WishlistComponent },
+  { path: 'checkout', component: CheckoutComponent }
 ];
 
 @NgModule({
