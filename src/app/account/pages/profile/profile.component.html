@@ -2,8 +2,45 @@
     <div class="container">
         <div class="n-card d-flex">
             <app-side-menu></app-side-menu>
-            <div class="n-content profile-content">
-                Profile
+            <div class="n-content">
+                <h2 class="head-title">حسابي</h2>
+                <div class="profile-content">
+                    <h3 class="account-info">
+                        بيانات حسابك
+                    </h3>
+                    <form action="" class="form">
+                        <div class="form-group">
+                            <label for="">الاسم الاول</label>
+                            <input type="text" class="form-control" value="نائل">
+                            <img src="assets/images/user-outline.png" alt="">
+                        </div>
+                        <div class="form-group">
+                            <label for="">الاسم الاخير</label>
+                            <input type="text" class="form-control" value="أيمن">
+                            <img src="assets/images/user-outline.png" alt="">
+                        </div>
+                        <div class="form-group">
+                            <label for="">الايميل</label>
+                            <input type="text" class="form-control" value="naelayman@birdeye.com">
+                            <img src="assets/images/mail.png" alt="">
+                        </div>
+                        <div class="form-group">
+                            <label for="">رقم الجوال</label>
+                            <div class="phone-input">
+                                <div class="code">
+                                    <select name="" id="">
+                                        <option value="">+966</option>
+                                    </select>
+                                    <img src="assets/images/arrow-down.png" alt="">
+                                </div>
+                                <input type="text" class="form-control" value="053 529 3787">
+                            </div>
+                            <img src="assets/images/call.png" alt="">
+                        </div>
+                    </form>
+                </div>
+
+                <button class="btn btn-primary">حفظ بياناتي</button>
             </div>
         </div>
     </div>

@@ -1,0 +1,107 @@
+@import "../../../../assets/variables";
+
+.profile {
+    margin: 50px 0;
+    .n-content {
+        width: 100%;
+        .head-title {
+            font-size: 18px;
+            font-weight: 500;
+            color: $headTitle;
+            background-color: $white;
+            padding: 16px 24px;
+            margin-bottom: 24px;
+            border-radius: 8px;
+        }
+        .profile-content {
+            padding: 16px;
+            background-color: $white;
+            .account-info {
+                margin-bottom: 24px;
+                color: $headTitle;
+                font-size: 20px;
+                font-weight: 700;
+            }
+            .form {
+                .form-group {
+                    position: relative;
+                    margin-bottom: 16px;
+                    label {
+                        display: block;
+                        margin-bottom: 8px;
+                        font-size: 14px;
+                        font-weight: 500;
+                        color: #222b45;
+                    }
+                    .form-control {
+                        height: 52px;
+                        border-radius: 8px;
+                        border-color: #c5cee0;
+                        padding-inline-start: 52px;
+                        color: $subTitle;
+                        font-size: 14px;
+                        font-weight: 400;
+                        line-height: 52px;
+                    }
+                    img {
+                        position: absolute;
+                        bottom: 15px;
+                        right: 16px;
+                    }
+                    .phone-input {
+                        position: relative;
+                        .code {
+                            position: absolute;
+                            left: 5px;
+                            width: 80px;
+                            height: 100%;
+                            display: flex;
+                            align-items: center;
+                            select {
+                                width: 100%;
+                                height: 95%;
+                                color: #667085;
+                                font-size: 14px;
+                                font-weight: 400;
+                                padding: 12px;
+                                border: 0;
+                                border-inline-start: 1px solid #c5cee0;
+                            }
+                            img {
+                                position: absolute;
+                                left: 8px;
+                                right: auto;
+                                bottom: 14px;
+                            }
+                        }
+                        .form-control {
+                            direction: ltr;
+                            padding-inline-end: 52px;
+                            padding-inline-start: 95px;
+                        }
+                    }
+                }
+            }
+        }
+        .btn {
+            margin: 24px auto 0;
+            max-width: 345px;
+            width: 100%;
+            display: block;
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .profile {
+        margin-top: 65px;
+        .n-card {
+            padding: 16px 8px;
+        }
+        .n-content {
+            .head-title {
+                display: none;
+            }
+        }
+    }
+}

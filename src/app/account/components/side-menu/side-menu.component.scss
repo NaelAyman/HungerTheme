@@ -1,0 +1,117 @@
+@import "../../../../assets/variables";
+
+.side-menu {
+    width: 300px;
+    max-width: 100%;
+    margin-inline-end: 24px;
+    border-radius: 24px;
+    background-color: $white;
+    padding-bottom: 50px;
+    .main-user-info {
+        padding: 18px;
+        border-radius: 24px;
+        background-color: $secondaryColor;
+        text-align: center;
+        margin-bottom: 40px;
+        .img {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: $primaryColor;
+            margin: 0 auto 16px;
+            svg {
+                width: 28px;
+                height: 28px;
+                path {
+                    fill: $white;
+                }
+            }
+        }
+        .welcome {
+            font-size: 18px;
+            font-weight: 500;
+            color: $headTitle;
+            margin: 0 0 8px;
+        }
+        .username {
+            font-size: 22px;
+            font-weight: 500;
+            color: $primaryColor;
+            margin: 0;
+        }
+    }
+    .profile-links {
+        li {
+            padding: 12px;
+            margin-bottom: 8px;
+            transition: all 0.3s ease-in-out;
+            a {
+                color: #344054;
+                font-size: 16px;
+                font-weight: 500;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                .txt {
+                    display: flex;
+                    align-items: center;
+                }
+                .icon {
+                    margin-inline-end: 8px;
+                }
+                .arrow-icon {
+                    opacity: 0;
+                }
+            }
+            &.active {
+                background-color: $secondaryColor;
+            }
+            &:hover {
+                background-color: $secondaryColor;
+            }
+            &:last-child {
+                a {
+                    color: #f04438;
+                    .arrow-icon {
+                        svg {
+                            path {
+                                stroke: #f04438;
+                            }
+                        }
+                    }
+                }
+                &:hover {
+                    background-color: transparent;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .side-menu {
+        display: none;
+        &.mobile-mode {
+            position: fixed;
+            z-index: 9;
+            width: 100%;
+            right: 0;
+            left: 0;
+            top: 60px;
+            height: calc(100% - 100px);
+            overflow-y: auto;
+        }
+        .profile-links {
+            li {
+                a {
+                    .arrow-icon {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+}

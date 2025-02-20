@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { CategoryComponent } from './pages/category/category.component';
 import { ProductDetailsComponent } from './pages/product-details/product-details.component';
 import { ShoppingCartComponent } from './pages/shopping-cart/shopping-cart.component';
-import { WishlistComponent } from './pages/wishlist/wishlist.component';
 import { CheckoutComponent } from './pages/checkout/checkout.component';
 import { ProductCardComponent } from './components/product-card/product-card.component';
 import { ProductCardFullComponent } from './components/product-card-full/product-card-full.component';
@@ -22,7 +21,6 @@ const routes: Routes = [
   { path: 'category/:id', component: CategoryComponent },
   { path: 'details/:id', component: ProductDetailsComponent },
   { path: 'cart', component: ShoppingCartComponent },
-  { path: 'wishlist', component: WishlistComponent },
   { path: 'checkout', component: CheckoutComponent }
 ];
 
@@ -31,7 +29,6 @@ const routes: Routes = [
     CategoryComponent,
     ProductDetailsComponent,
     ShoppingCartComponent,
-    WishlistComponent,
     CheckoutComponent,
     ProductCardComponent,
     ProductCardFullComponent,

@@ -13,6 +13,7 @@ import { OrderDetailsComponent } from './pages/order-details/order-details.compo
 import { SharedModule } from '../shared/shared.module';
 import { AuthGuard } from '../auth/auth.guard';
 import { SideMenuComponent } from './components/side-menu/side-menu.component';
+import { WishlistComponent } from './pages/wishlist/wishlist.component';
 
 const routes: Routes = [
   { path: 'profile', component: ProfileComponent },
@@ -23,7 +24,8 @@ const routes: Routes = [
   { path: 'wallet', component: WalletComponent },
   { path: 'change-password', component: ChangePasswordComponent },
   { path: 'complaints', component: ComplaintListComponent },
-  { path: 'complaints/add', component: AddComplaintComponent }
+  { path: 'complaints/add', component: AddComplaintComponent },
+  { path: 'wishlist', component: WishlistComponent }
 ];
 
 @NgModule({
@@ -37,7 +39,8 @@ const routes: Routes = [
     ComplaintListComponent,
     AddComplaintComponent,
     OrderDetailsComponent,
-    SideMenuComponent
+    SideMenuComponent,
+    WishlistComponent
   ],
   imports: [
     CommonModule,
