@@ -126,6 +126,26 @@
         }
     }
 }
+.no-data {
+    margin: 100px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    max-width: 330px;
+    width: 100%;
+    img {
+        width: 64px;
+        margin-bottom: 32px;
+    }
+    .desc {
+        font-size: 16px;
+        font-weight: 500;
+        color: $headTitle;
+        margin-bottom: 32px;
+    }
+}
 
 @media (max-width: 992px) {
     .shopping-cart {
