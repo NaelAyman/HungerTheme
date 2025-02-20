@@ -1,4 +1,4 @@
-<div class="side-menu">
+<div class="side-menu" [class.mobile-mode]="isActive">
     <div class="main-user-info">
         <div class="img">
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
@@ -11,7 +11,7 @@
     </div>
     <ul class="profile-links">
         <li class="active">
-            <a routerLink="/account/profile" class="">
+            <a routerLink="/account/profile" (click)="closeMenu()">
                 <div class="txt">
                     <div class="icon">
                         <img src="assets/images/user.png" alt="">
@@ -26,7 +26,7 @@
             </a>
         </li>
         <li>
-            <a routerLink="/account/orders">
+            <a routerLink="/account/orders" (click)="closeMenu()">
                 <div class="txt">
                     <div class="icon">
                         <img src="assets/images/sticky note.png" alt="">
@@ -41,7 +41,7 @@
             </a>
         </li>
         <li>
-            <a routerLink="/account/wallet">
+            <a routerLink="/account/wallet" (click)="closeMenu()">
                 <div class="txt">
                     <div class="icon">
                         <img src="assets/images/wallet.png" alt="">
@@ -56,7 +56,7 @@
             </a>
         </li>
         <li>
-            <a routerLink="/account/wishlist">
+            <a routerLink="/account/wishlist" (click)="closeMenu()">
                 <div class="txt">
                     <div class="icon">
                         <img src="assets/images/favourite.png" alt="">
@@ -71,7 +71,7 @@
             </a>
         </li>
         <li>
-            <a routerLink="/account/addresses">
+            <a routerLink="/account/addresses" (click)="closeMenu()">
                 <div class="txt">
                     <div class="icon">
                         <img src="assets/images/location.png" alt="">
@@ -86,7 +86,7 @@
             </a>
         </li>
         <li>
-            <a routerLink="/account/complaints">
+            <a routerLink="/account/complaints" (click)="closeMenu()">
                 <div class="txt">
                     <div class="icon">
                         <img src="assets/images/file-security.png" alt="">
@@ -101,7 +101,7 @@
             </a>
         </li>
         <li>
-            <a routerLink="">
+            <a routerLink="" (click)="closeMenu()">
                 <div class="txt">
                     <div class="icon">
                         <img src="assets/images/logout.png" alt="">
